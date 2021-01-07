@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>GIFOS - Mis GIFOS</title>
+</head>
+
+<body>
+    <header class="cabecera" id="cabecera">
+        <div class="header" id="header">
+            <div class="logos" id="logos">
+            <!--logos modo light / nocturno via html-->
+
+                <div class="logo" id="logoLight">
+                    <a href="./index.html">
+                        <img src="./images/logo-mobile.svg" alt="logo" class="logo-toggle">
+                    </a>
+                </div>
+            </div>
+
+            <div class="menu">
+            <!--menu hamburguesa-->
+                <input type="checkbox" id="menu">
+                <label for="menu" class="open"> <img src="./images/burger.svg" alt="burger"></label>
+                <label for="menu" class="close"> <img src="./images/close.svg" alt="burger"> </label>
+
+                <ul>
+                    <li><a id="nightmode">Modo Nocturno</a></li>
+                    <hr class="menuLine">
+                    <li><a href="./favoritos.html">Mis Favoritos</a></li>
+                    <hr class="menuLine">
+                    <li><a>Mis GIFOS</a></li>
+                    <hr class="menuLine">
+                </ul>   
+
+                <div class="create-gifo">
+                    <a href="./crearGifos.html">
+                        <img src="./images/button-crear-gifo.svg" alt="crear-gifo">
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+    </header>
+
+    <main>
+
+        <section class="misGifos">
+            <div class="misGifs">
+                <img src="./images/icon-mis-gifos.svg" alt="favs">
+                <h2>Mis Gifos</h2>
+                <div class="myGifs" id="myGifs">
+                    <div class="containerMisGifos">
+                        <div class="mine"></div>
+                        <div class="mine"></div>
+                        <div class="mine"></div>
+                        <div class="mine"></div>
+                        <div class="mine"></div>
+                        <div class="mine"></div>
+                        <div class="mine"></div>
+                        <div class="mine"></div>
+                    </div>
+                    <div class="verMas">ver más</div>
+
+                </div>
+    
+            </div>
+
+        </section>
+
+        <!--trending search-->
+        <section class="trending-gifos" id="trending-gifos">
+            <div class="trending-gifs" id="trending-gifs">
+                <h2 class="trending-gifos-h2">Trending GIFOS</h2>
+                <p class="trending-gifos-text"><span class="line">Mira los últimos</span> <span class="line">GIFOS de nuestra comunidad.</span></p>
+                <div class="trending-gifs-images">
+                    <img src="./images/button-slider-left.svg" alt="slide-left" class="slider">
+                    <div class="tren">
+
+                        <div class="imageTren">
+                            <div class="dataGifTren">
+                                <div class="buttonsTren">
+                                    <img src="./images/icon-fav.svg" alt="favearTren">
+                                    <img src="./images/icon-download.svg" alt="downloadTren">
+                                    <img src="./images/icon-max-normal.svg" alt="maxTren">
+                                </div>
+                                <div class="userAndTitleTren">
+                                    <p>User</p>
+                                    <h4>Titulo GIFO</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="imageTren">
+                            <div class="dataGifTren">
+                                <div class="buttonsTren">
+                                    <img src="./images/icon-fav.svg" alt="favearTren">
+                                    <img src="./images/icon-download.svg" alt="downloadTren">
+                                    <img src="./images/icon-max-normal.svg" alt="maxTren">
+                                </div>
+                                <div class="userAndTitleTren">
+                                    <p>User</p>
+                                    <h4>Titulo GIFO</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="imageTren">
+                            <div class="dataGifTren">
+                                <div class="buttonsTren">
+                                    <img src="./images/icon-fav.svg" alt="favearTren">
+                                    <img src="./images/icon-download.svg" alt="downloadTren">
+                                    <img src="./images/icon-max-normal.svg" alt="maxTren">
+                                </div>
+                                <div class="userAndTitleTren">
+                                    <p>User</p>
+                                    <h4>Titulo GIFO</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <img src="./images/Button-Slider-right.svg" alt="slide-right" class="slider">
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <footer class="footer" id="footer">
+        <div class="compartir">
+            <p>Compartir en:</p>
+
+            <div class="socials">
+                <img src="./images/icon_facebook.svg" alt="icon-facebook" id="icon-facebook">
+                <img src="./images/icon-twitter.svg" alt="icon-twitter" id="icon-twitter">
+                <img src="./images/icon-twitter-hover.svg" alt="icon-twitter-hover" id="icon-twitter-blue">
+                <img src="./images/icon_instagram.svg" alt="icon-instagram" id="icon-instagram">
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>© GIFOS 2020 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- <script src="./index.js"></script> -->
+</body>

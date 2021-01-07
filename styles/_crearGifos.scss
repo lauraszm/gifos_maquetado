@@ -1,0 +1,113 @@
+.crearGifos{
+
+    width: 90vw;
+    margin: auto;
+    .creation {
+        padding: 5% 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+
+        .camaraYLuz {
+            display: flex;
+            flex-direction: row;
+            padding-top: 30vh;
+            align-items: baseline;
+
+            .camara {
+                img {
+                    align-self: center;
+                    width: 8.5vw;
+                    height: auto;
+                }
+            }
+
+            .luz {
+                img {
+                    align-self: center;
+                    width: 6.3vw;
+                    height: auto;
+                }
+            }
+        }
+        .filmSection {
+            width: 47.8vw;
+            height: 16vh;
+            border: 1px solid #572EE5;
+            padding: 30vh 5vw;
+
+            h2 {
+                @include h2-desktop;
+                padding: 0 8vw;
+
+                .green {
+                    color: #5ED7C6;
+                }
+            }
+
+            p {
+                font-family: 'Roboto';
+                font-weight: 500;
+                font-size: 1rem;
+                color: #000000;
+                text-align: center;
+                line-height: 1.8125rem;
+            }
+        }
+
+        .cinta {
+            img {
+                width: 12vw;
+                height: auto;
+                padding-left: 2%;
+                margin-top: 65vh;
+            }
+        }
+    }
+}
+
+.steps {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .numbers {
+        display: flex;
+        flex-direction: row;
+        align-self: center;
+
+        p {
+            font-family: 'Roboto';
+            font-weight: 500;
+            font-size: 1.125rem;
+            color: #572EE5;
+            text-align: center;
+            border: 1px solid #572EE5;
+            border-radius: 50%;
+            margin: 1vw;
+            padding: 0.6rem 1rem;
+        }
+    }
+
+    hr {
+        width: 55.3vw;
+        height: 10%;
+        background: #572EE5;
+        align-self: center;
+    }
+
+    .comenzar {
+        align-self: center;
+        font-family: 'Montserrat';
+        font-weight: 700;
+        font-size: 0.8125rem;
+        color: #572EE5;
+        letter-spacing: 0;
+        text-align: center;
+        border: 1px solid #572EE5;
+        border-radius: 25px;
+        padding: 1rem;
+        text-transform: uppercase;
+        margin-top: 3%;
+    }
+}

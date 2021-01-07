@@ -1,0 +1,28 @@
+.nightmode-background-all {
+    background-color: #37383C;
+}
+
+.nightmode-background-trending {
+    background-color: #222326;
+}
+
+.nightmode-header {
+    background-color: #37383C;
+    color: #ffffff;
+}
+
+.nightmode-menu {
+    background-color: #000000;
+}
+
+.nightmode-h1 {
+    @include h1-dark;
+}
+
+.nightmode-searchbar {
+    @include search-dark;
+}
+
+.nightmode-placeholder {
+    @include placeholder-dark
+}

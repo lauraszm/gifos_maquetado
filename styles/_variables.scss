@@ -1,0 +1,172 @@
+$background-color: #ffffff;
+$background-menu: #572EE5;
+$background-trending: #F3F5F8;
+
+@mixin menu-mobile {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #FFFFFF;
+    line-height: 1.875rem;
+    font-weight: 700;
+}
+
+@mixin menu-desktop {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 0.8125rem;
+    color: #572EE5;
+    letter-spacing: 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@mixin hamburger-menu {
+    height: 0.875rem;
+    width: 0.9375rem;
+}
+
+@mixin h1-mobile {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 1.5625rem;
+    color: $background-menu;
+    text-align: center;
+    line-height: 2.0625rem;
+}
+
+@mixin h1-dark {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 1.5625rem;
+    color: $background-color;
+    text-align: center;
+    line-height: 2.0625rem;
+
+}
+
+@mixin h1-desktop {
+    font-size: 2.1875rem;
+    text-align: center;
+    line-height: 3.125rem;
+}
+
+@mixin search-mobile {
+    background: #FFFFFF;
+    border: 1px solid $background-menu;
+    border-radius: 27px;
+    width: 89.1vw;
+    height: 3.125rem;
+}
+
+@mixin search-dark {
+    background: #37383C;
+    border: 1px solid $background-color;
+    border-radius: 27px;
+    width: 89.1vw;
+    height: 3.125rem;
+}
+
+@mixin search-desktop {
+    background: #FFFFFF;
+    border: 1px solid $background-menu;
+    border-radius: 27px;
+    width: 60vw;
+    height: 3.125rem;
+}
+
+@mixin placeholder-mobile {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 1rem;
+    color: #000000;
+    text-align: left;
+    margin-left: 10vw;
+}
+
+@mixin placeholder-dark {
+    font-family: 'Roboto';
+    font-weight: 400;
+    font-size: 1rem;
+    color: #9CAFC3;
+    text-align: left;
+    margin-left: 10vw;
+}
+
+@mixin h3-mobile {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 1rem;
+    color: $background-menu;
+    text-align: center;
+    line-height: 1.5625rem;
+}
+
+@mixin h3-desktop {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #572EE5;
+    text-align: center;
+    line-height: 1.5625em;
+}
+
+@mixin p-trending-mobile {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: $background-menu;
+    text-align: center;
+    line-height: 1.5625rem;
+}
+
+@mixin p-trending-desktop {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 1rem;
+    color: #572EE5;
+    text-align: center;
+    line-height: 1.5625rem;
+}
+
+@mixin h2-mobile {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: $background-menu;
+    text-align: center;
+    line-height: 1.875rem;
+}
+
+@mixin h2-desktop {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 1.5625rem;
+    color: #572EE5;
+    text-align: center;
+    line-height: 1.875em;
+}
+
+@mixin footer1-mobile {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: #000000;
+    letter-spacing: 0;
+}
+
+@mixin footer1-desktop {
+    font-size: 0.8125rem;
+}
+
+@mixin footer2-mobile {
+    font-family: 'Roboto';
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: #000000;
+    letter-spacing: 0;
+    line-height: 1.25rem;
+}
+
+@mixin footer2-desktop {
+    font-size: 0.8125rem;
+}

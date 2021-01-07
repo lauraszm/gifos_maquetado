@@ -1,0 +1,18 @@
+.main-title {
+    h1 {
+        @include h1-mobile;
+
+        .green {
+            color: #5ED7C6;
+        }
+    }
+}
+
+@media screen and (min-width:768px){
+    .main-title {
+        h1 {
+            @include h1-desktop;
+            padding: 5% 26%;
+        }
+    }
+}

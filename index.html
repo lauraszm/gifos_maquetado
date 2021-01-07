@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <title>GIFOS</title>
+</head>
+<body>
+    <header class="cabecera" id="cabecera">
+        <div class="header" id="header">
+            <div class="logos" id="logos">
+            <!--logos modo light / nocturno via html-->
+
+                <div class="logo" id="logoLight">
+                    <img src="./images/logo-mobile.svg" alt="logo" class="logo-toggle">
+                </div>
+            </div>
+
+            <div class="menu">
+            <!--menu hamburguesa-->
+                <input type="checkbox" id="menu">
+                <label for="menu" class="open"> <img src="./images/burger.svg" alt="burger"></label>
+                <label for="menu" class="close"> <img src="./images/close.svg" alt="burger"> </label>
+
+                <ul>
+                    <li><a id="nightmode">Modo Nocturno</a></li>
+                    <hr class="menuLine">
+                    <li><a href="./favoritos.html">Mis Favoritos</a></li>
+                    <hr class="menuLine">
+                    <li><a href="./misGifos.html">Mis GIFOS</a></li>
+                    <hr class="menuLine">
+                </ul>   
+
+                <div class="create-gifo">
+                    <a href="./crearGifos.html">
+                    <img src="./images/button-crear-gifo.svg" alt="crear-gifo">
+                    </a>
+                </div>
+            </div>
+
+
+        </div>
+    </header>
+
+    <main>
+        <!--titulo principal-->
+        <section class="main-title" id="main-title">
+            <h1>Inspírate, busca, guarda, y crea los mejores <span class="green">GIFOS</span></h1>
+        </section>
+
+        <!--imagen principal y busqueda-->
+        <section class="search">
+            <div class="search-image" id="search-image">
+                <img src="./images/ilustra_header.svg" alt="main-picture">
+            </div>
+            <div class="search-bar">
+                <input type="autocomplete" placeholder="Busca GIFOS y más" id = "searchGifos">
+                <img src="./images/icon-search.svg" alt="search" id="searchButton">
+                <div class="searchSug"></div>
+            </div>
+            <div class="container" id="ContainerGifs">
+                <div class="containerGifos">
+                    <div class="image">
+                        <div class="dataGif">
+                            <div class="buttons">
+                                <img src="./images/icon-fav.svg" alt="favear">
+                                <img src="./images/icon-download.svg" alt="download">
+                                <img src="./images/icon-max-normal.svg" alt="max">
+                            </div>
+                            <div class="userAndTitle">
+                                <p>User</p>
+                                <h4>Titulo GIFO</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="image">
+                        <div class="dataGif">
+                            <div class="buttons">
+                                <img src="./images/icon-fav.svg" alt="favear">
+                                <img src="./images/icon-download.svg" alt="download">
+                                <img src="./images/icon-max-normal.svg" alt="max">
+                            </div>
+                            <div class="userAndTitle">
+                                <p>User</p>
+                                <h4>Titulo GIFO</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="verMas">ver más</div>
+
+            </div>
+
+            <!--trending topics-->
+            <div class="trending-topics" id="trending-topics">
+                <h3 class="trending" id="trending">Trending:</h3>
+                <p class="trending-text" id="trending-text"><span class= "line">Reactions, Entertainment,</span> <span class="line">Sports, Stickers, Artists</span></p>
+            </div>
+           
+                
+        </section>
+
+        <!--trending search-->
+        <section class="trending-gifos" id="trending-gifos">
+            <div class="trending-gifs" id="trending-gifs">
+                <h2 class="trending-gifos-h2">Trending GIFOS</h2>
+                <p class="trending-gifos-text"><span class="line">Mira los últimos</span> <span class="line">GIFOS de nuestra comunidad.</span></p>
+                <div class="trending-gifs-images">
+                    <img src="./images/button-slider-left.svg" alt="slide-left" class="slider">
+                    <div class="tren">
+
+                        <div class="imageTren">
+                            <div class="dataGifTren">
+                                <div class="buttonsTren">
+                                    <img src="./images/icon-fav.svg" alt="favearTren">
+                                    <img src="./images/icon-download.svg" alt="downloadTren">
+                                    <img src="./images/icon-max-normal.svg" alt="maxTren">
+                                </div>
+                                <div class="userAndTitleTren">
+                                    <p>User</p>
+                                    <h4>Titulo GIFO</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="imageTren">
+                            <div class="dataGifTren">
+                                <div class="buttonsTren">
+                                    <img src="./images/icon-fav.svg" alt="favearTren">
+                                    <img src="./images/icon-download.svg" alt="downloadTren">
+                                    <img src="./images/icon-max-normal.svg" alt="maxTren">
+                                </div>
+                                <div class="userAndTitleTren">
+                                    <p>User</p>
+                                    <h4>Titulo GIFO</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="imageTren">
+                            <div class="dataGifTren">
+                                <div class="buttonsTren">
+                                    <img src="./images/icon-fav.svg" alt="favearTren">
+                                    <img src="./images/icon-download.svg" alt="downloadTren">
+                                    <img src="./images/icon-max-normal.svg" alt="maxTren">
+                                </div>
+                                <div class="userAndTitleTren">
+                                    <p>User</p>
+                                    <h4>Titulo GIFO</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <img src="./images/Button-Slider-right.svg" alt="slide-right" class="slider">
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer" id="footer">
+        <div class="compartir">
+            <p>Compartir en:</p>
+
+            <div class="socials">
+                <img src="./images/icon_facebook.svg" alt="icon-facebook" id="icon-facebook">
+                <img src="./images/icon-twitter.svg" alt="icon-twitter" id="icon-twitter">
+                <img src="./images/icon-twitter-hover.svg" alt="icon-twitter-hover" id="icon-twitter-blue">
+                <img src="./images/icon_instagram.svg" alt="icon-instagram" id="icon-instagram">
+            </div>
+        </div>
+
+        <div class="copyright">
+            <p>© GIFOS 2020 All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- <script src="./index.js"></script> -->
+</body>
+</html>

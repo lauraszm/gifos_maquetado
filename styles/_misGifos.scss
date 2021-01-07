@@ -1,0 +1,102 @@
+.misGifos {
+    .misGifs {
+
+        display: block;
+        padding-top: 10%;
+
+        img {
+            height: 1.3125rem;
+            width: 1.75rem;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        h2 {
+            @include h2-mobile
+        }
+
+        .myGifs {
+            box-sizing: border-box;
+            padding: 10% 5%;
+    
+            .containerMisGifos {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+                grid-gap: 5vw;    
+                margin-bottom: 1rem;
+                box-sizing: border-box;
+
+                .mine {
+
+                    height: 7.5rem;
+                    width: 42vw;
+                    background-image: url('https://media.giphy.com/media/kaq6GnxDlJaBq/giphy.gif');
+                    background-size: 42vw 7.5rem;
+                
+                }
+                
+            }
+
+            .verMas {
+                font-family: 'Montserrat';
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size: 13px;
+                color: #572EE5;
+                letter-spacing: 0;
+                text-align: center;
+                border: 1px solid #572EE5;
+                border-radius: 25px;
+                border-radius: 25px;
+                width: 34vw;
+                height: 5%;
+                padding: 1rem;
+                margin: auto;
+            }
+    
+        }
+    }
+}
+
+@media screen and (min-width:768px){
+    .misGifos {
+        .misGifs {
+            img {
+                height: 1.3125rem;
+                width: 1.75rem;
+                position: relative;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+    
+            h2 {
+                @include h2-desktop
+            }
+            .myGifs {
+    
+                .containerMisGifos{
+                    grid-template-columns: repeat(4, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                    // padding: 10% 10vw;
+        
+                    .mine {
+                        width: 18vw;
+                        height: 25vh;
+                        background-size: 18vw 25vh;
+                    }
+                }
+    
+                .verMas {
+                    width: 10vw;
+                    margin-top: 10vh;
+                }
+            }
+        }
+
+    }
+
+}

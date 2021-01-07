@@ -1,0 +1,220 @@
+.search {
+    display: block;
+    padding: 10% 5%;
+
+    .search-image {
+
+        img{ 
+            box-sizing: border-box;
+            width: 17.0625em;
+            height: auto;
+            margin: 0;
+            align-self: center;
+        }
+    }
+
+    .search-bar {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin: -1.1%;
+        z-index: 1;
+        @include search-mobile;
+
+            
+            input {
+                box-sizing: border-box;
+                border: none;
+                align-self: center;
+                padding: 0 5%;    
+                width: 70%;
+                height: 2.5rem;
+            
+    
+                &:placeholder-shown{
+                   @include placeholder-mobile;
+                }
+
+            img {
+                box-sizing: border-box;
+                background-color: #FFFFFF;
+                border: none;
+                height: 2rem;
+                padding-right: 25vw;
+                margin-top: 2%;
+            } 
+    
+        }
+    }
+
+    .trending-topics {
+        padding-top: 15%;
+        padding-bottom: 10%;
+        .trending {
+            @include h3-mobile;
+        }
+    
+        .trending-text {
+            @include p-trending-mobile;
+    
+            .line {
+                display: block;
+            }
+        }
+    }
+
+    #ContainerGifs {
+
+        .containerGifos {
+            box-sizing: border-box;
+            padding-top: 10%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            grid-gap: 5vw;
+    
+            .image {
+                box-sizing: border-box;
+                height: 7.5rem;
+                width: 42vw;
+                background-image: url('https://media.giphy.com/media/kaq6GnxDlJaBq/giphy.gif');
+                background-size: 42vw 7.5rem;
+
+                .dataGif {
+                    display: none;
+                }
+            }
+    
+        }
+    
+        .verMas {
+            font-family: 'Montserrat';
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 13px;
+            color: #572EE5;
+            letter-spacing: 0;
+            text-align: center;
+            border: 1px solid #572EE5;
+            border-radius: 25px;
+            border-radius: 25px;
+            width: 34vw;
+            height: 5%;
+            padding: 1rem;
+            margin: auto;
+        }
+    }
+
+    
+}
+
+@media screen and (min-width:768px){
+    .search {
+        display: flex;
+        flex-direction: column;
+
+        .search-image {
+            align-self: center;
+
+            img {
+                height: 11.875rem;
+                width: 24.9375rem;
+                padding: auto;
+
+            }
+        }
+
+        .search-bar {
+            @include search-desktop;
+            align-self: center;
+
+            input {
+                box-sizing: border-box;
+                padding-left: 10vw;
+                padding-right: 5vw;
+
+
+                &:placeholder-shown{
+                    box-sizing: border-box;
+                    margin-left: 5vw;
+                    padding-left: 5vw;
+                }
+     
+            }
+        }
+
+    
+
+
+        .trending-topics {
+            padding-bottom: 0;
+            .trending {
+                @include h3-desktop;
+                }
+            .trending-text {
+                @include p-trending-desktop;
+                
+                .line {
+                    display: inline-flex;
+                }
+            }
+        }
+
+        #ContainerGifs {
+
+            .containerGifos{
+                grid-template-columns: repeat(4, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                // padding: 10% 10vw;
+    
+                .image {
+                    width: 18vw;
+                    height: 25vh;
+                    background-size: 18vw 25vh;
+
+                    .dataGif {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        .buttons {
+                            align-self: flex-end;
+                            img {
+                                width: 2.2vw;
+                                height: auto;
+                                padding: 5%;
+                                box-sizing: border-box;    
+                            }
+                        }
+                        .userAndTitle {
+                            align-self: flex-start;
+                            margin-top: 30%;
+
+
+                            p {
+                                font-family: 'Roboto';
+                                font-weight: 500;
+                                font-size: 0.9375em;
+                                color: #FFFFFF;
+                            }
+
+                            h4 {
+                                font-family: 'Roboto';
+                                font-weight: 700;
+                                font-size: 1rem;
+                                color: #FFFFFF;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .verMas {
+                width: 10vw;
+                margin-top: 10vh;
+            }
+        }
+    }
+}

@@ -1,0 +1,146 @@
+.trending-gifos {
+
+    .trending-gifs{
+
+        padding-top: 10%;
+        padding-bottom: 10%;
+        background-color: $background-trending;
+    
+        .trending-gifos-h2 {
+            @include h2-mobile
+        }
+    
+        .trending-gifos-text {
+            font-family: 'Roboto';
+            font-weight: 500;
+            font-size: 1rem;
+            color: #000000;
+            text-align: center;
+            line-height: 1.4375rem;
+    
+            .line {
+                display: block;
+            }   
+        }
+        .trending-gifs-images {
+            display: flex;
+            flex-direction: row;
+            padding: 5% 5vw;
+            box-sizing: border-box;
+            overflow: scroll;
+
+            
+            .slider {
+                display: none;
+            }
+            .tren {
+                display: flex;
+                flex-direction: row;
+    
+                .imageTren {
+                    box-sizing: border-box;
+                    height: 35vh;
+                    width: 64.8vw;
+                    margin: 6vw;
+                    background-image: url('https://media.giphy.com/media/kaq6GnxDlJaBq/giphy.gif');
+                    background-size: 64.8vw 35vh;
+                    
+                    .dataGifTren {
+                        display: none;
+                    }
+                }
+            }
+
+                // img{
+
+                //     width: 64.8vw;
+                //     height: 35vh;
+                //     box-sizing: border-box;
+                //     padding: 6vw;
+                // }
+                
+            
+        }
+    }
+}
+
+@media screen and (min-width:768px){
+    .trending-gifos {
+        .trending-gifs{
+            box-sizing: border-box;
+            .trending-gifos-h2{
+                @include h2-desktop;
+            }
+    
+            .trending-gifos-text{
+                font-size: 1.125rem;
+                text-align: center;
+    
+                .line {
+                    display: inline;
+                }
+            }
+    
+            .trending-gifs-images {
+                overflow: visible;
+                margin: 0;
+                justify-content: space-between;
+                box-sizing: border-box;
+                padding: 8% 5vw 0 5vw;
+
+                
+                .slider {
+                    display: inline;
+                }
+                .tren{
+                    box-sizing: border-box;
+                    .imageTren {
+                         width: 24vw;
+                         height: 35vh;
+                         background-size: 25vw 35vh;
+                         padding: 0;
+                         box-sizing: border-box;
+                         margin: 2vw;
+     
+                         .dataGifTren {
+                             display: flex;
+                             flex-direction: column;
+                             justify-content: space-between;
+     
+                             .buttonsTren {
+                                 align-self: flex-end;
+                                 padding: 3%;
+     
+                                 img {
+                                     width: 2.2vw;
+                                     height: auto;
+                                     box-sizing: border-box;    
+                                 }
+                             }
+                             .userAndTitleTren {
+                                 align-self: flex-start;
+                                 margin-top: 35%;
+                                 padding-left: 2vw;
+     
+     
+                                 p {
+                                     font-family: 'Roboto';
+                                     font-weight: 500;
+                                     font-size: 0.9375em;
+                                     color: #FFFFFF;
+                                 }
+     
+                                 h4 {
+                                     font-family: 'Roboto';
+                                     font-weight: 700;
+                                     font-size: 1rem;
+                                     color: #FFFFFF;
+                                 }
+                             }
+                         }
+                     }
+                }
+            }
+        }
+    }
+}
