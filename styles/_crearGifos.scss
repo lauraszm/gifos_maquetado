@@ -3,7 +3,6 @@
     width: 90vw;
     margin: auto;
     .creation {
-        padding: 5% 0;
         box-sizing: border-box;
         display: flex;
         flex-direction: row;
@@ -94,6 +93,7 @@
         height: 10%;
         background: #572EE5;
         align-self: center;
+        margin-right: 3vw;
     }
 
     .comenzar {
