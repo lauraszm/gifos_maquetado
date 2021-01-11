@@ -274,6 +274,17 @@
       line-height: 1.5625rem; }
       .search .trending-topics .trending-text .line {
         display: block; }
+  .search #ContainerGifs .h2-gifs {
+    padding-top: 10%; }
+    .search #ContainerGifs .h2-gifs h2 {
+      font-family: 'Montserrat';
+      font-weight: 700;
+      font-size: 2.1875rem;
+      color: #572EE5;
+      text-align: center;
+      line-height: 1.875rem; }
+      .search #ContainerGifs .h2-gifs h2:first-letter {
+        text-transform: uppercase; }
   .search #ContainerGifs .containerGifos {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -287,7 +298,6 @@
               box-sizing: border-box;
       height: 7.5rem;
       width: 42vw;
-      background-image: url("https://media.giphy.com/media/kaq6GnxDlJaBq/giphy.gif");
       background-size: 42vw 7.5rem; }
       .search #ContainerGifs .containerGifos .image .dataGif {
         display: none; }
@@ -368,7 +378,7 @@
         width: 18vw;
         height: 25vh;
         background-size: 18vw 25vh; }
-        .search #ContainerGifs .containerGifos .image .dataGif {
+        .search #ContainerGifs .containerGifos .image:hover > .dataGif {
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
@@ -378,26 +388,30 @@
                   flex-direction: column;
           -webkit-box-pack: justify;
               -ms-flex-pack: justify;
-                  justify-content: space-between; }
-          .search #ContainerGifs .containerGifos .image .dataGif .buttons {
+                  justify-content: space-between;
+          opacity: 0.7;
+          background-color: #572EE5;
+          width: 18vw;
+          height: 25vh; }
+          .search #ContainerGifs .containerGifos .image:hover > .dataGif .buttons {
             -ms-flex-item-align: end;
                 align-self: flex-end; }
-            .search #ContainerGifs .containerGifos .image .dataGif .buttons img {
+            .search #ContainerGifs .containerGifos .image:hover > .dataGif .buttons img {
               width: 2.2vw;
               height: auto;
               padding: 5%;
               -webkit-box-sizing: border-box;
                       box-sizing: border-box; }
-          .search #ContainerGifs .containerGifos .image .dataGif .userAndTitle {
+          .search #ContainerGifs .containerGifos .image:hover > .dataGif .userAndTitle {
             -ms-flex-item-align: start;
                 align-self: flex-start;
-            margin-top: 30%; }
-            .search #ContainerGifs .containerGifos .image .dataGif .userAndTitle p {
+            margin: 25% 1vw 1rem 1vw; }
+            .search #ContainerGifs .containerGifos .image:hover > .dataGif .userAndTitle p {
               font-family: 'Roboto';
               font-weight: 500;
               font-size: 0.9375em;
               color: #FFFFFF; }
-            .search #ContainerGifs .containerGifos .image .dataGif .userAndTitle h4 {
+            .search #ContainerGifs .containerGifos .image:hover > .dataGif .userAndTitle h4 {
               font-family: 'Roboto';
               font-weight: 700;
               font-size: 1rem;
