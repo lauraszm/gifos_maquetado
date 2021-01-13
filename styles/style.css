@@ -289,7 +289,7 @@
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     padding-top: 10%;
-    display: grid;
+    display: none;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(6, 1fr);
     grid-gap: 5vw; }
@@ -298,6 +298,7 @@
               box-sizing: border-box;
       height: 7.5rem;
       width: 42vw;
+      background-image: url("https://media.giphy.com/media/kaq6GnxDlJaBq/giphy.gif");
       background-size: 42vw 7.5rem; }
       .search #ContainerGifs .containerGifos .image .dataGif {
         display: none; }

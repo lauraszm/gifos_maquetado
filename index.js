@@ -34,9 +34,12 @@ search.addEventListener('click', searchContent);
 async function fetchSearch(search){
     const resSearch = await fetch(`${baseURL}${endpointSearch}?${apiKey}&limit=12&q=${search}`);
     const resSearchJson = await resSearch.json();
-    console.log(resSearchJson)
+    console.log(resSearchJson);
+    // let searchResults = document.createElement('div');
+    // searchResults.classList.add('containerGifos');
     let searchResults = document.querySelector('.containerGifos');
     let h2SearchResults = document.querySelector('#ContainerGifs')
+    h2SearchResults.appendChild(searchResults)
 
     // searchResults.innerHTML = '';
     if(resSearchJson.data.length === 0){
@@ -52,6 +55,8 @@ async function fetchSearch(search){
         searchResults.append(noResultsTitle,noResultsImg,noResultsSuggestion);
 
     } else {
+
+        searchResults.style.display = "grid";
         let h2 = document.createElement('div');
         h2.classList.add('h2-gifs');
         h2.innerHTML = `<h2>${search}</h2>`;
@@ -61,6 +66,7 @@ async function fetchSearch(search){
             console.log(resSearchJson.data[i].images.fixed_height.url)
             
             //create div=image
+            // let image = document.querySelector('.image')
             let image = document.createElement('div');
             image.classList.add('image');
             image.style.backgroundImage = "url('"+resSearchJson.data[i].images.fixed_height.url+"')"
