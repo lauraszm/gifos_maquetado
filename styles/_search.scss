@@ -84,7 +84,7 @@
         .containerGifos {
             box-sizing: border-box;
             padding-top: 10%;
-            display: none;
+            display: grid;
             grid-template-columns: repeat(2, 1fr);
             grid-template-rows: repeat(6, 1fr);
             grid-gap: 5vw;
