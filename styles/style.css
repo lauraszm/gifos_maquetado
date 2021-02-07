@@ -6,7 +6,7 @@
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 99;
+  z-index: 90;
   background-color: #ffffff; }
   .cabecera .header {
     -webkit-box-sizing: border-box;
@@ -209,7 +209,7 @@
     margin: 0;
     -ms-flex-item-align: center;
         align-self: center; }
-  .search .search-bar {
+  .search .search-bar .searchElements {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     display: -webkit-box;
@@ -224,30 +224,26 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin: -1.1%;
     z-index: 1;
     background: #FFFFFF;
     border: 1px solid #572EE5;
     border-radius: 27px;
     width: 89.1vw;
     height: 3.125rem; }
-    .search .search-bar input {
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box;
+    .search .search-bar .searchElements input {
       border: none;
       -ms-flex-item-align: center;
           align-self: center;
       padding: 0 5%;
-      width: 70%;
       height: 2.5rem; }
-      .search .search-bar input:placeholder-shown {
+      .search .search-bar .searchElements input:placeholder-shown {
         font-family: 'Roboto';
         font-weight: 400;
         font-size: 1rem;
         color: #000000;
         text-align: left;
         margin-left: 10vw; }
-      .search .search-bar input img {
+      .search .search-bar .searchElements input img {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box;
         background-color: #FFFFFF;
@@ -274,18 +270,7 @@
       line-height: 1.5625rem; }
       .search .trending-topics .trending-text .line {
         display: block; }
-  .search #ContainerGifs .h2-gifs {
-    padding-top: 10%; }
-    .search #ContainerGifs .h2-gifs h2 {
-      font-family: 'Montserrat';
-      font-weight: 700;
-      font-size: 2.1875rem;
-      color: #572EE5;
-      text-align: center;
-      line-height: 1.875rem; }
-      .search #ContainerGifs .h2-gifs h2:first-letter {
-        text-transform: uppercase; }
-  .search #ContainerGifs .containerGifos {
+  .search #containerGifs .containerGifos {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     padding-top: 10%;
@@ -293,16 +278,21 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(6, 1fr);
     grid-gap: 5vw; }
-    .search #ContainerGifs .containerGifos .image {
+    .search #containerGifs .containerGifos .image {
       -webkit-box-sizing: border-box;
               box-sizing: border-box;
       height: 7.5rem;
-      width: 42vw;
-      background-image: url("https://media.giphy.com/media/kaq6GnxDlJaBq/giphy.gif");
-      background-size: 42vw 7.5rem; }
-      .search #ContainerGifs .containerGifos .image .dataGif {
+      width: 42vw; }
+      .search #containerGifs .containerGifos .image img {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        height: 7.5rem;
+        width: 42vw; }
+      .search #containerGifs .containerGifos .image .dataGif {
         display: none; }
-  .search #ContainerGifs .verMas {
+        .search #containerGifs .containerGifos .image .dataGif .hidden {
+          display: none; }
+  .search #containerGifs .verMas {
     font-family: 'Montserrat';
     text-transform: uppercase;
     font-weight: 700;
@@ -317,6 +307,63 @@
     height: 5%;
     padding: 1rem;
     margin: auto; }
+  .search .modal {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 91;
+    margin: 0;
+    padding: 0;
+    display: none; }
+    .search .modal .modalImage .gif {
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      width: 85vw;
+      height: 15.313rem;
+      background-repeat: no-repeat;
+      background-size: 19.875rem 15.313rem;
+      margin-top: 8rem; }
+    .search .modal .modalImage .closeModal {
+      position: absolute;
+      top: 4rem;
+      left: 85vw;
+      z-index: 1;
+      height: 0.875rem;
+      width: 0.875rem; }
+    .search .modal .modalInfo {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between; }
+      .search .modal .modalInfo .modalUserAndTitle {
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        padding: 1rem 8%; }
+        .search .modal .modalInfo .modalUserAndTitle p {
+          font-family: 'Roboto';
+          font-weight: 500;
+          font-size: 0.938rem;
+          color: #000000;
+          text-align: left;
+          line-height: 1.125rem; }
+        .search .modal .modalInfo .modalUserAndTitle h4 {
+          font-family: 'Montserrat';
+          font-weight: 700;
+          font-size: 1rem;
+          color: #000000;
+          text-align: center; }
+      .search .modal .modalInfo .modalBtns {
+        padding: 1rem 8% 0 0; }
 
 @media screen and (min-width: 768px) {
   .search {
@@ -335,23 +382,24 @@
         width: 24.9375rem;
         padding: auto; }
     .search .search-bar {
-      background: #FFFFFF;
-      border: 1px solid #572EE5;
-      border-radius: 27px;
-      width: 60vw;
-      height: 3.125rem;
       -ms-flex-item-align: center;
           align-self: center; }
-      .search .search-bar input {
-        -webkit-box-sizing: border-box;
-                box-sizing: border-box;
-        padding-left: 10vw;
-        padding-right: 5vw; }
-        .search .search-bar input:placeholder-shown {
+      .search .search-bar .searchElements {
+        background: #FFFFFF;
+        border: 1px solid #572EE5;
+        border-radius: 27px;
+        width: 60vw;
+        height: 3.125rem; }
+        .search .search-bar .searchElements input {
           -webkit-box-sizing: border-box;
                   box-sizing: border-box;
-          margin-left: 5vw;
-          padding-left: 5vw; }
+          padding-left: 10vw;
+          padding-right: 5vw; }
+          .search .search-bar .searchElements input:placeholder-shown {
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+            margin-left: 5vw;
+            padding-left: 5vw; }
     .search .trending-topics {
       padding-bottom: 0; }
       .search .trending-topics .trending {
@@ -372,14 +420,14 @@
           display: -webkit-inline-box;
           display: -ms-inline-flexbox;
           display: inline-flex; }
-    .search #ContainerGifs .containerGifos {
+    .search #containerGifs .containerGifos {
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: repeat(3, 1fr); }
-      .search #ContainerGifs .containerGifos .image {
+      .search #containerGifs .containerGifos .image {
         width: 18vw;
         height: 25vh;
         background-size: 18vw 25vh; }
-        .search #ContainerGifs .containerGifos .image:hover > .dataGif {
+        .search #containerGifs .containerGifos .image:hover > .dataGif {
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
@@ -393,31 +441,34 @@
           opacity: 0.7;
           background-color: #572EE5;
           width: 18vw;
-          height: 25vh; }
-          .search #ContainerGifs .containerGifos .image:hover > .dataGif .buttons {
+          height: 25vh;
+          position: absolute;
+          z-index: 1; }
+          .search #containerGifs .containerGifos .image:hover > .dataGif .buttons {
             -ms-flex-item-align: end;
-                align-self: flex-end; }
-            .search #ContainerGifs .containerGifos .image:hover > .dataGif .buttons img {
+                align-self: flex-end;
+            padding: 3%; }
+            .search #containerGifs .containerGifos .image:hover > .dataGif .buttons img {
               width: 2.2vw;
               height: auto;
               padding: 5%;
               -webkit-box-sizing: border-box;
                       box-sizing: border-box; }
-          .search #ContainerGifs .containerGifos .image:hover > .dataGif .userAndTitle {
+          .search #containerGifs .containerGifos .image:hover > .dataGif .userAndTitle {
             -ms-flex-item-align: start;
                 align-self: flex-start;
             margin: 25% 1vw 1rem 1vw; }
-            .search #ContainerGifs .containerGifos .image:hover > .dataGif .userAndTitle p {
+            .search #containerGifs .containerGifos .image:hover > .dataGif .userAndTitle p {
               font-family: 'Roboto';
               font-weight: 500;
               font-size: 0.9375em;
               color: #FFFFFF; }
-            .search #ContainerGifs .containerGifos .image:hover > .dataGif .userAndTitle h4 {
+            .search #containerGifs .containerGifos .image:hover > .dataGif .userAndTitle h4 {
               font-family: 'Roboto';
               font-weight: 700;
               font-size: 1rem;
               color: #FFFFFF; }
-    .search #ContainerGifs .verMas {
+    .search #containerGifs .verMas {
       width: 10vw;
       margin-top: 10vh; } }
 .trending-gifos .trending-gifs {
@@ -451,7 +502,10 @@
     padding: 5% 5vw;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    overflow: scroll; }
+    overflow: scroll;
+    -webkit-scroll-snap-type: x mandatory;
+        -ms-scroll-snap-type: x mandatory;
+            scroll-snap-type: x mandatory; }
     .trending-gifos .trending-gifs .trending-gifs-images .slider {
       display: none; }
     .trending-gifos .trending-gifs .trending-gifs-images .tren {
@@ -468,7 +522,6 @@
         height: 35vh;
         width: 64.8vw;
         margin: 6vw;
-        background-image: url("https://media.giphy.com/media/kaq6GnxDlJaBq/giphy.gif");
         background-size: 64.8vw 35vh; }
         .trending-gifos .trending-gifs .trending-gifs-images .tren .imageTren .dataGifTren {
           display: none; }

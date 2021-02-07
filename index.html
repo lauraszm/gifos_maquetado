@@ -28,11 +28,11 @@
 
                 <ul>
                     <li><a id="nightmode">Modo Nocturno</a></li>
-                    <hr class="menuLine">
+                    <div class="menuLine"></div>
                     <li><a href="./favoritos.html">Mis Favoritos</a></li>
-                    <hr class="menuLine">
+                    <div class="menuLine"></div>
                     <li><a href="./misGifos.html">Mis GIFOS</a></li>
-                    <hr class="menuLine">
+                    <div class="menuLine"></div>
                 </ul>   
 
                 <div class="create-gifo">
@@ -58,73 +58,55 @@
                 <img src="./images/ilustra_header.svg" alt="main-picture">
             </div>
             <div class="search-bar">
-                <input type="autocomplete" placeholder="Busca GIFOS y más" id = "searchGifos">
-                <img src="./images/icon-search.svg" alt="search" id="searchButton">
-                <div class="searchSug"></div>
+                <div class="searchElements">
+                    <input type="search" placeholder="Busca GIFOS y más" id = "searchGifos">
+                    <img src="./images/icon-search.svg" alt="search" id="searchButton">
+                </div>
+                <div class="searchSug">
+                    <ul>
+                    </ul>
+                </div>
             </div>
-            <div class="container" id="ContainerGifs">
+            <div class="container" id="containerGifs">
                 <!-- h2 titulo busqueda -->
                 <div class="containerGifos">
-                    <div class="image">
-                        <div class="dataGif">
-                            <div class="buttons">
-                                <img src="./images/icon-fav.svg" alt="favear">
-                                <img src="./images/icon-download.svg" alt="download">
-                                <img src="./images/icon-max-normal.svg" alt="max">
-                            </div>
+                    <!-- <div class="image"> -->
+                        <!-- <img src="https://media.giphy.com/media/GeimqsH0TLDt4tScGw/giphy.gif" alt=""> -->
+                        
+                        <!-- <div class="dataGif">
+                            <ul class="buttons">
+                                <li><a><img src="./images/icon-fav.svg" alt="favear"></a></li>
+                                <li><a><img src="./images/icon-download.svg" alt="download"></a></li>
+                                <li><a><img src="./images/icon-max-normal.svg" alt="max"></a></li>
+                            </ul>
                             <div class="userAndTitle">
                                 <p>User</p>
                                 <h4>Titulo GIFO</h4>
                             </div>
-                        </div>
-                    </div>
+                        </div> -->
+                    <!-- </div> -->
 
-                    <div class="image">
-                        <div class="dataGif">
-                            <div class="buttons">
-                                <img src="./images/icon-fav.svg" alt="favear">
-                                <img src="./images/icon-download.svg" alt="download">
-                                <img src="./images/icon-max-normal.svg" alt="max">
-                            </div>
-                            <div class="userAndTitle">
-                                <p>User</p>
-                                <h4>Titulo GIFO</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="image">
-                        <div class="dataGif">
-                            <div class="buttons">
-                                <img src="./images/icon-fav.svg" alt="favear">
-                                <img src="./images/icon-download.svg" alt="download">
-                                <img src="./images/icon-max-normal.svg" alt="max">
-                            </div>
-                            <div class="userAndTitle">
-                                <p>User</p>
-                                <h4>Titulo GIFO</h4>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="image">
-                        <div class="dataGif">
-                            <div class="buttons">
-                                <img src="./images/icon-fav.svg" alt="favear">
-                                <img src="./images/icon-download.svg" alt="download">
-                                <img src="./images/icon-max-normal.svg" alt="max">
-                            </div>
-                            <div class="userAndTitle">
-                                <p>User</p>
-                                <h4>Titulo GIFO</h4>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
                 
+                <!-- <div class="verMas">ver más</div> -->
                 
-                <div class="verMas">ver más</div>
-
+                <div class="modal">
+                    <!-- <div class="modalImage">
+                        <i class="closeModal"><img src="./images/close.svg" alt="close"></i>
+                        <div class="gif"></div>
+                    </div>
+                    <div class="modalInfo">
+                        <div class="modalUserAndTitle">
+                            <p>User</p>
+                            <h4>Titulo GIFO</h4>
+                        </div>
+                        <div class="modalBtns">
+                            <i class="modalFav"><img src="./images/icon-fav.svg" alt="fav"></i>
+                            <i class="modalDownload"><img src="./images/icon-download.svg" alt="download"></i>
+                        </div>
+                    </div> -->
+                </div>
             </div>
 
             <!--trending topics-->
@@ -144,8 +126,7 @@
                 <div class="trending-gifs-images">
                     <img src="./images/button-slider-left.svg" alt="slide-left" class="slider">
                     <div class="tren">
-
-                        <div class="imageTren">
+                        <!-- <div class="imageTren">
                             <div class="dataGifTren">
                                 <div class="buttonsTren">
                                     <img src="./images/icon-fav.svg" alt="favearTren">
@@ -183,7 +164,7 @@
                                     <h4>Titulo GIFO</h4>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
 
@@ -209,7 +190,8 @@
             <p>© GIFOS 2020 All Rights Reserved.</p>
         </div>
     </footer>
-
-    <!-- <script src="./index.js"></script> -->
+    <script src="./scripts/funciones.js"></script>
+    <script src="./scripts/trending.js"></script>
+    <script src="./scripts/search.js"></script>
 </body>
 </html>

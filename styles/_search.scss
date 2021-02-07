@@ -14,39 +14,41 @@
     }
 
     .search-bar {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        margin: -1.1%;
-        z-index: 1;
-        @include search-mobile;
 
-            
-            input {
+            .searchElements {
                 box-sizing: border-box;
-                border: none;
-                align-self: center;
-                padding: 0 5%;    
-                width: 70%;
-                height: 2.5rem;
-            
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+                align-items: center;
+                // margin: -1.1%;
+                z-index: 1;
+                @include search-mobile;
+        
+                input {
+                    border: none;
+                    align-self: center;
+                    padding: 0 5%;    
+                    // width: 70%;
+                    height: 2.5rem;
+                
+        
+                    &:placeholder-shown{
+                       @include placeholder-mobile;
+                    }
     
-                &:placeholder-shown{
-                   @include placeholder-mobile;
+                img {
+                    box-sizing: border-box;
+                    background-color: #FFFFFF;
+                    border: none;
+                    height: 2rem;
+                    padding-right: 25vw;
+                    margin-top: 2%;
+                    } 
+        
                 }
-
-            img {
-                box-sizing: border-box;
-                background-color: #FFFFFF;
-                border: none;
-                height: 2rem;
-                padding-right: 25vw;
-                margin-top: 2%;
-            } 
-    
-        }
+            }
+        
     }
 
     .trending-topics {
@@ -65,22 +67,22 @@
         }
     }
 
-    #ContainerGifs {
-        .h2-gifs {
-            padding-top: 10%;
-            h2 {
-                font-family: 'Montserrat';
-                font-weight: 700;
-                font-size: 2.1875rem;
-                color: #572EE5;
-                text-align: center;
-                line-height: 1.875rem;
+    #containerGifs {
+        // .h2-gifs {
+        //     padding-top: 10%;
+        //     h2 {
+        //         font-family: 'Montserrat';
+        //         font-weight: 700;
+        //         font-size: 2.1875rem;
+        //         color: #572EE5;
+        //         text-align: center;
+        //         line-height: 1.875rem;
 
-                &:first-letter {
-                    text-transform: uppercase;
-                }
-            }
-        }
+        //         &:first-letter {
+        //             text-transform: uppercase;
+        //         }
+        //     }
+        // }
         .containerGifos {
             box-sizing: border-box;
             padding-top: 10%;
@@ -93,11 +95,20 @@
                 box-sizing: border-box;
                 height: 7.5rem;
                 width: 42vw;
-                background-image: url('https://media.giphy.com/media/kaq6GnxDlJaBq/giphy.gif');
-                background-size: 42vw 7.5rem;
-
+                // background-image: url('https://media.giphy.com/media/kaq6GnxDlJaBq/giphy.gif');
+                // background-size: 42vw 7.5rem;
+                img {
+                    box-sizing: border-box;
+                    height: 7.5rem;
+                    width: 42vw;
+    
+                }
                 .dataGif {
                     display: none;
+
+                    .hidden {
+                        display: none;
+                    }
                 }
             }
     
@@ -121,8 +132,77 @@
         }
     }
 
+    .modal {
+        box-sizing: border-box;
+        position: absolute;
+        background-color: rgba(255,255,255,0.90);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        z-index: 91;
+        margin: 0;
+        padding: 0;
+        display: none;
+
+            .modalImage {
+
+                .gif {
+                    box-sizing: border-box;
+                    width: 85vw;
+                    height: 15.313rem;
+                    // background-image: url('https://media.giphy.com/media/sfPmqVyav8hkAXaHx7/giphy.gif');
+                    background-repeat: no-repeat;
+                    background-size: 19.875rem 15.313rem;
+                    margin-top: 8rem;
+                }
+                
+                .closeModal {
+                    position: absolute;
+                    top: 4rem; 
+                    left: 85vw; 
+                    z-index: 1;
+                    height: 0.875rem;
+                    width: 0.875rem;
+                }
     
-}
+               
+            }
+    
+            .modalInfo {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                .modalUserAndTitle {
+                    box-sizing: border-box;
+                    padding: 1rem 8%;
+                    p {
+                        font-family: 'Roboto';
+                        font-weight: 500;
+                        font-size: 0.938rem;
+                        color: #000000;
+                        text-align: left;
+                        line-height: 1.125rem;
+                    }
+    
+                    h4 {
+                        font-family: 'Montserrat';
+                        font-weight: 700;
+                        font-size: 1rem;
+                        color: #000000;
+                        text-align: center;
+                    }
+                }
+                .modalBtns {
+                    padding: 1rem 8% 0 0;
+                }
+            }
+        }
+
+    }
+
+
+
 
 @media screen and (min-width:768px){
     .search {
@@ -141,21 +221,24 @@
         }
 
         .search-bar {
-            @include search-desktop;
             align-self: center;
 
-            input {
-                box-sizing: border-box;
-                padding-left: 10vw;
-                padding-right: 5vw;
+            .searchElements {
+                @include search-desktop;
 
-
-                &:placeholder-shown{
+                input {
                     box-sizing: border-box;
-                    margin-left: 5vw;
-                    padding-left: 5vw;
+                    padding-left: 10vw;
+                    padding-right: 5vw;
+    
+    
+                    &:placeholder-shown{
+                        box-sizing: border-box;
+                        margin-left: 5vw;
+                        padding-left: 5vw;
+                    }
+         
                 }
-     
             }
         }
 
@@ -176,7 +259,7 @@
             }
         }
 
-        #ContainerGifs {
+        #containerGifs {
 
             .containerGifos{
                 grid-template-columns: repeat(4, 1fr);
@@ -187,46 +270,55 @@
                     height: 25vh;
                     background-size: 18vw 25vh;
 
-                    &:hover > .dataGif {
+                
+                
+                &:hover > .dataGif {
 
-                            display: flex;
-                            flex-direction: column;
-                            justify-content: space-between;
-                            opacity: 0.7;
-                            background-color: #572EE5;
-                            width: 18vw;
-                            height: 25vh;
-    
-                            .buttons {
-                                align-self: flex-end;
-                                img {
-                                    width: 2.2vw;
-                                    height: auto;
-                                    padding: 5%;
-                                    box-sizing: border-box;    
-                                }
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        opacity: 0.7;
+                        background-color: #572EE5;
+                        width: 18vw;
+                        height: 25vh;
+                        position: absolute;
+                        z-index: 1;
+                    
+                        .buttons {
+                            align-self: flex-end;
+                            padding: 3%;
+                             
+                            img {
+                                width: 2.2vw;
+                                height: auto;
+                                padding: 5%;
+                                box-sizing: border-box;    
                             }
-                            .userAndTitle {
-                                align-self: flex-start;
-                                margin: 25% 1vw 1rem 1vw;
-
-    
-    
-                                p {
-                                    font-family: 'Roboto';
-                                    font-weight: 500;
-                                    font-size: 0.9375em;
-                                    color: #FFFFFF;
-                                }
-    
-                                h4 {
-                                    font-family: 'Roboto';
-                                    font-weight: 700;
-                                    font-size: 1rem;
-                                    color: #FFFFFF;
-                                }
-                            // }
                         }
+                                                          
+                            
+                    
+                        .userAndTitle {
+                            align-self: flex-start;
+                            margin: 25% 1vw 1rem 1vw;
+
+
+
+                            p {
+                                font-family: 'Roboto';
+                                font-weight: 500;
+                                font-size: 0.9375em;
+                                color: #FFFFFF;
+                            }
+
+                            h4 {
+                                font-family: 'Roboto';
+                                font-weight: 700;
+                                font-size: 1rem;
+                                color: #FFFFFF;
+                            }
+                    }
+
                     }
                 }
             }

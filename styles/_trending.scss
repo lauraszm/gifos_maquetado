@@ -28,6 +28,7 @@
             padding: 5% 5vw;
             box-sizing: border-box;
             overflow: scroll;
+            scroll-snap-type: x mandatory;
 
             
             .slider {
@@ -42,7 +43,7 @@
                     height: 35vh;
                     width: 64.8vw;
                     margin: 6vw;
-                    background-image: url('https://media.giphy.com/media/kaq6GnxDlJaBq/giphy.gif');
+                    // background-image: url('https://media.giphy.com/media/kaq6GnxDlJaBq/giphy.gif');
                     background-size: 64.8vw 35vh;
                     
                     .dataGifTren {
