@@ -1,9 +1,4 @@
-//1. definir la URL de la API
-//2. definir funcion de llamar a la API
-//3. Usar palabra clave async antes del parametro, y en cada funcion que llamemos a la funcion1, agregar async
-//4. Usar palabra clase await antes de fetch
-//5. Encerrar codio en try / catch
-//6. definir el error en el catch
+
 const getSearchTags = async (word) => {
     try {
         const suggestions = await fetch(`https://api.giphy.com/v1/gifs/search/tags?api_key=j4As5HO2OpUG2w2gTuuqQnIGuwOu2nnJ&limit=4&q=${word}`);

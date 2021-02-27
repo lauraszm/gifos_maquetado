@@ -38,22 +38,34 @@
                 display: flex;
                 flex-direction: row;
     
-                .imageTren {
-                    box-sizing: border-box;
-                    height: 35vh;
-                    width: 64.8vw;
-                    margin: 6vw;
-                    // background-image: url('https://media.giphy.com/media/kaq6GnxDlJaBq/giphy.gif');
-                    background-size: 64.8vw 35vh;
-                    
-                    .dataGifTren {
+                .image {
+
+                    img {
+                        height: 7.5rem;
+                        width: 42vw;
+                    }
+    
+                    .dataGif {
                         display: none;
                     }
+    
                 }
+        
             }
         }
     }
 }
+
+// @keyframes slide {
+//     from {
+//         margin-left: 0;
+//     }
+//     to {
+//         margin-left: -25vw;
+//     }
+// }
+
+
 
 @media screen and (min-width:768px){
     .trending-gifos {
@@ -82,58 +94,87 @@
                 
                 .slider {
                     display: inline;
+                    cursor: pointer;
+
                 }
+
                 .tren{
                     box-sizing: border-box;
-                    .imageTren {
-                         width: 24vw;
-                         height: 35vh;
-                         background-size: 25vw 35vh;
-                         padding: 0;
-                         box-sizing: border-box;
-                         margin: 2vw;
-     
-                         &:hover .dataGifTren {
-                             display: flex;
-                             flex-direction: column;
-                             justify-content: space-between;
-                             opacity: 0.7;
-                             background-color: #572EE5;
-                             width: 24vw;
-                             height: 35vh;
-     
-                             .buttonsTren {
-                                 align-self: flex-end;
-                                 padding: 3%;
-     
-                                 img {
-                                     width: 2.2vw;
-                                     height: auto;
-                                     box-sizing: border-box;    
-                                 }
-                             }
-                             .userAndTitleTren {
-                                 align-self: flex-start;
-                                 padding-left: 2vw;
-                                 padding-bottom: 1rem;
-     
-     
-                                 p {
-                                     font-family: 'Roboto';
-                                     font-weight: 500;
-                                     font-size: 0.9375em;
-                                     color: #FFFFFF;
-                                 }
-     
-                                 h4 {
-                                     font-family: 'Roboto';
-                                     font-weight: 700;
-                                     font-size: 1rem;
-                                     color: #FFFFFF;
-                                 }
-                             }
-                         }
-                     }
+                    .image {
+                        padding: 0.2rem;
+                        position: relative;
+                        
+
+                        img {
+                            width: 25vw;
+                            height: 11rem;
+        
+                        }
+    
+                        &:hover .dataGif {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            opacity: 0.7;
+                            background-color: #572EE5;
+                            position: absolute;
+                            width: 25vw;
+                            height: 11rem;
+                            transform: translate(0%, -100%);
+                            margin: none;
+                            z-index: 1;
+                            margin-top: -2px;
+    
+                            .botones {
+                
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: flex-end;
+                                position: relative;
+                                z-index: 1;
+                                        
+                                   a > img {
+                                        width: 3vw;
+                                        height: auto;
+                                        padding: 7%;
+                                        box-sizing: border-box;  
+                                        padding: 10%;  
+    
+                                        &:hover {
+                                            transform: scale(1.2);
+                                            transition: all 0.2s;
+                                        }
+                                    }
+                                }
+                            
+                                .info {
+                                    position: relative;
+                                    padding-left: 2vw;
+        
+                                    p {
+                                        font-family: 'Roboto';
+                                        font-weight: 500;
+                                        font-size: 0.9375em;
+                                        color: #FFFFFF;
+                                        padding-bottom: 0.2rem;
+                                    }
+            
+                                    h4 {
+                                        font-family: 'Roboto';
+                                        font-weight: 700;
+                                        font-size: 1rem;
+                                        color: #FFFFFF;
+                                    }
+                                }
+    
+                        }
+        
+                    
+                    
+        
+                        
+                    
+                }
                 }
             }
         }

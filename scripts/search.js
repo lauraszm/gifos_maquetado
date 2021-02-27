@@ -19,15 +19,22 @@ const autocomplete = async (ev) => {
     if (ev.key === 'Enter' || ev.keyCode === '13'){
         const containerGifos = document.querySelector('.containerGifos');
         containerGifos.innerHTML = "";
+        containerList.innerHTML= "";
         searchContent();
     }
 }
 searchInput.addEventListener('keyup', autocomplete);
 
-
+let gifosOffset = 0;
 //getting input for search
 const searchContent = async () => {
-    const gifosSearch = await getGifosSearch(0, searchInput.value)
+    const gifosSearch = await getGifosSearch(gifosOffset, searchInput.value)
+    fetchSearch(gifosSearch)
+}
+
+const viewMore = async() => {
+    gifosOffset +=12;
+    const gifosSearch = await getGifosSearch(gifosOffset, searchInput.value)
     fetchSearch(gifosSearch)
 }
 
@@ -35,24 +42,24 @@ search.addEventListener('click', searchContent);
 
 const createModal = (ev) => {
     const modal = document.querySelector('.modal');
-    console.log(ev.target.background)
+    // console.log(ev.target)
     modal.style.display = "block";
-    modal.innerHTML = `<div class="modalImage">
+    modal.innerHTML = 
+    `<div class="modalImage">
+    <img src="${ev.target.image}" alt="${ev.target.title}">
     <i class="closeModal"><img src="./images/close.svg" alt="close"></i>
-    <div class="gif"></div>
 </div>
 <div class="modalInfo">
     <div class="modalUserAndTitle">
-        <p>${ev.target.username}</p>
-        <h4>${ev.target.title}</h4>
+    <p>${ev.target.username}</p>
+    <h4>${ev.target.title}</h4>
     </div>
     <div class="modalBtns">
         <i class="modalFav"><img src="./images/icon-fav.svg" alt="fav"></i>
         <i class="modalDownload"><img src="./images/icon-download.svg" alt="download"></i>
     </div>
-</div>
 </div>`
-modal.querySelector('.modalImage > .gif').style.backgroundImage = `url(${ev.target.background})`;
+    
 modal.querySelector('.modalImage > .closeModal').addEventListener('click', function (){
     modal.style.display = 'none'
 })
@@ -64,11 +71,12 @@ modal.querySelector('.modalImage > .closeModal').addEventListener('click', funct
 const fetchSearch = (arr) => {
 
     let searchResults = document.querySelector('#containerGifs');
+    console.log(searchInput.value)
 
     // searchResults.innerHTML = '';
     if(arr.data.length === 0){
         let noResultsTitle = document.createElement('h2');
-        noResultsTitle.innerText = search;
+        noResultsTitle.innerText = searchInput.value;
         
         let noResultsImg = document.createElement('img');
         noResultsImg.setAttribute('src', './images/icon-busqueda-sin-resultado.svg');
@@ -80,47 +88,54 @@ const fetchSearch = (arr) => {
 
     } else {
 
-        // let h2SearchResults = document.createElement('h2');
-        // h2SearchResults.innerHTML = `<h2>${search}</h2>`;
-        // h2SearchResults.appendChild(searchResults);
+        let h2SearchResults = document.createElement('h2');
+        h2SearchResults.textContent = searchInput.value;
+        searchResults.prepend(h2SearchResults);
 
         const containerGifos = document.querySelector('.containerGifos')
         arr.data.forEach(el => {
             const divGif = document.createElement('div');
             divGif.classList.add('image');
             const imageURL = el.images.fixed_height.url;
-            divGif.style.backgroundImage = `url(${imageURL})`
+            // divGif.style.backgroundImage = `url(${imageURL})`
             divGif.innerHTML = 
-            `<div class="dataGif">
-            <span class="hidden">${imageURL}</span>
-            <div class="buttons">
-                <a><img src="./images/icon-fav.svg" alt="favear"></a>
-                <a href="${el.images.original.mp4}" download="gifos" target="_blank"><img src="./images/icon-download.svg" alt="download"></a>
-                <a><img class="maxGif" src="./images/icon-max-normal.svg" alt="max"></a>
-            </div>
-            <div class="userAndTitle">
-                <p>${el.username}</p>
-                <h4>${el.title}</h4>
-            </div>
+            `<img src="${imageURL}" alt="">
+            
+            <div class="dataGif">
+                <div class="botones">
+                    <a class="boton fav"><img src="./images/icon-fav.svg" alt=""></a>
+                    <a class="boton maxGif"><img src="./images/icon-max-normal.svg" alt=""></a>
+                    <a class="boton download" href="${imageURL}" download><img src="./images/icon-download.svg" alt=""></a>
+                </div>
+                <div class="info">
+                    <p class="user">${el.username}</p>
+                    <h4 class="title">${el.title}</h4>
+                </div>
             </div>`
             containerGifos.appendChild(divGif);
 
-            const maximise = divGif.querySelector('.maxGif')
+            const maximise = divGif.querySelector('.maxGif');
             maximise.addEventListener('click', createModal);
             maximise.username = el.username;
             maximise.title = el.title;
-            maximise.background = imageURL;
+            maximise.image = imageURL;
+
+            const image = divGif.querySelector('img');
+            image.addEventListener("click", createModal);
+            image.username = el.username;
+            image.title = el.title;
+            image.image = imageURL;
+
             
-            // divGif.addEventListener('click', createModal)
+            divGif.addEventListener('click', createModal)
         })
 
         searchInput.innerText = "";
 
-        //create view more button
-        let verMas = document.createElement('div');
-        verMas.classList.add('verMas');
-        verMas.innerText = 'ver más'
-        searchResults.appendChild(verMas);
+        //show view more button
+        let verMas = document.querySelector('.verMas');
+        verMas.style.display = "block";
+        verMas.addEventListener("click", viewMore)
 
 
     }

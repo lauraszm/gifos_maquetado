@@ -270,29 +270,31 @@
       line-height: 1.5625rem; }
       .search .trending-topics .trending-text .line {
         display: block; }
+  .search #containerGifs .h2-gifs {
+    padding-top: 10%; }
+    .search #containerGifs .h2-gifs h2 {
+      font-family: 'Montserrat';
+      font-weight: 700;
+      font-size: 2.1875rem;
+      color: #572EE5;
+      text-align: center;
+      line-height: 1.875rem; }
+      .search #containerGifs .h2-gifs h2:first-letter {
+        text-transform: uppercase; }
   .search #containerGifs .containerGifos {
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     padding-top: 10%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template: repeat(6, 1fr)/repeat(2, 1fr);
     grid-gap: 5vw; }
-    .search #containerGifs .containerGifos .image {
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box;
+    .search #containerGifs .containerGifos .image img {
       height: 7.5rem;
       width: 42vw; }
-      .search #containerGifs .containerGifos .image img {
-        -webkit-box-sizing: border-box;
-                box-sizing: border-box;
-        height: 7.5rem;
-        width: 42vw; }
-      .search #containerGifs .containerGifos .image .dataGif {
-        display: none; }
-        .search #containerGifs .containerGifos .image .dataGif .hidden {
-          display: none; }
+    .search #containerGifs .containerGifos .image .dataGif {
+      display: none; }
   .search #containerGifs .verMas {
+    display: none;
     font-family: 'Montserrat';
     text-transform: uppercase;
     font-weight: 700;
@@ -312,21 +314,13 @@
             box-sizing: border-box;
     position: absolute;
     background-color: rgba(255, 255, 255, 0.9);
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     top: 0;
     z-index: 91;
     margin: 0;
     padding: 0;
     display: none; }
-    .search .modal .modalImage .gif {
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box;
-      width: 85vw;
-      height: 15.313rem;
-      background-repeat: no-repeat;
-      background-size: 19.875rem 15.313rem;
-      margin-top: 8rem; }
     .search .modal .modalImage .closeModal {
       position: absolute;
       top: 4rem;
@@ -421,13 +415,19 @@
           display: -ms-inline-flexbox;
           display: inline-flex; }
     .search #containerGifs .containerGifos {
-      grid-template-columns: repeat(4, 1fr);
-      grid-template-rows: repeat(3, 1fr); }
+      grid-template: repeat(3, 1fr)/repeat(4, 1fr); }
       .search #containerGifs .containerGifos .image {
-        width: 18vw;
-        height: 25vh;
-        background-size: 18vw 25vh; }
-        .search #containerGifs .containerGifos .image:hover > .dataGif {
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content;
+        height: -webkit-max-content;
+        height: -moz-max-content;
+        height: max-content;
+        position: relative; }
+        .search #containerGifs .containerGifos .image img {
+          width: 18vw;
+          height: 7.5rem; }
+        .search #containerGifs .containerGifos .image:hover .dataGif {
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
@@ -440,37 +440,56 @@
                   justify-content: space-between;
           opacity: 0.7;
           background-color: #572EE5;
-          width: 18vw;
-          height: 25vh;
+          width: 100%;
+          height: 100%;
           position: absolute;
+          -webkit-transform: translate(0%, -100%);
+                  transform: translate(0%, -100%);
+          margin: none;
           z-index: 1; }
-          .search #containerGifs .containerGifos .image:hover > .dataGif .buttons {
-            -ms-flex-item-align: end;
-                align-self: flex-end;
-            padding: 3%; }
-            .search #containerGifs .containerGifos .image:hover > .dataGif .buttons img {
-              width: 2.2vw;
+          .search #containerGifs .containerGifos .image:hover .dataGif .botones {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: row;
+                    flex-direction: row;
+            -webkit-box-pack: end;
+                -ms-flex-pack: end;
+                    justify-content: flex-end;
+            position: relative;
+            z-index: 1; }
+            .search #containerGifs .containerGifos .image:hover .dataGif .botones a > img {
+              width: 3vw;
               height: auto;
-              padding: 5%;
+              padding: 7%;
               -webkit-box-sizing: border-box;
-                      box-sizing: border-box; }
-          .search #containerGifs .containerGifos .image:hover > .dataGif .userAndTitle {
-            -ms-flex-item-align: start;
-                align-self: flex-start;
-            margin: 25% 1vw 1rem 1vw; }
-            .search #containerGifs .containerGifos .image:hover > .dataGif .userAndTitle p {
+                      box-sizing: border-box;
+              padding: 10%; }
+              .search #containerGifs .containerGifos .image:hover .dataGif .botones a > img:hover {
+                -webkit-transform: scale(1.2);
+                        transform: scale(1.2);
+                -webkit-transition: all 0.2s;
+                transition: all 0.2s; }
+          .search #containerGifs .containerGifos .image:hover .dataGif .info {
+            position: relative;
+            padding-left: 2vw; }
+            .search #containerGifs .containerGifos .image:hover .dataGif .info p {
               font-family: 'Roboto';
               font-weight: 500;
               font-size: 0.9375em;
-              color: #FFFFFF; }
-            .search #containerGifs .containerGifos .image:hover > .dataGif .userAndTitle h4 {
+              color: #FFFFFF;
+              padding-bottom: 0.2rem; }
+            .search #containerGifs .containerGifos .image:hover .dataGif .info h4 {
               font-family: 'Roboto';
               font-weight: 700;
               font-size: 1rem;
               color: #FFFFFF; }
     .search #containerGifs .verMas {
       width: 10vw;
-      margin-top: 10vh; } }
+      margin-top: 10vh;
+      cursor: pointer; } }
 .trending-gifos .trending-gifs {
   padding-top: 10%;
   padding-bottom: 10%;
@@ -516,15 +535,11 @@
       -webkit-box-direction: normal;
           -ms-flex-direction: row;
               flex-direction: row; }
-      .trending-gifos .trending-gifs .trending-gifs-images .tren .imageTren {
-        -webkit-box-sizing: border-box;
-                box-sizing: border-box;
-        height: 35vh;
-        width: 64.8vw;
-        margin: 6vw;
-        background-size: 64.8vw 35vh; }
-        .trending-gifos .trending-gifs .trending-gifs-images .tren .imageTren .dataGifTren {
-          display: none; }
+      .trending-gifos .trending-gifs .trending-gifs-images .tren .image img {
+        height: 7.5rem;
+        width: 42vw; }
+      .trending-gifos .trending-gifs .trending-gifs-images .tren .image .dataGif {
+        display: none; }
 
 @media screen and (min-width: 768px) {
   .trending-gifos .trending-gifs {
@@ -552,19 +567,18 @@
               box-sizing: border-box;
       padding: 8% 5vw 0 5vw; }
       .trending-gifos .trending-gifs .trending-gifs-images .slider {
-        display: inline; }
+        display: inline;
+        cursor: pointer; }
       .trending-gifos .trending-gifs .trending-gifs-images .tren {
         -webkit-box-sizing: border-box;
                 box-sizing: border-box; }
-        .trending-gifos .trending-gifs .trending-gifs-images .tren .imageTren {
-          width: 24vw;
-          height: 35vh;
-          background-size: 25vw 35vh;
-          padding: 0;
-          -webkit-box-sizing: border-box;
-                  box-sizing: border-box;
-          margin: 2vw; }
-          .trending-gifos .trending-gifs .trending-gifs-images .tren .imageTren:hover .dataGifTren {
+        .trending-gifos .trending-gifs .trending-gifs-images .tren .image {
+          padding: 0.2rem;
+          position: relative; }
+          .trending-gifos .trending-gifs .trending-gifs-images .tren .image img {
+            width: 25vw;
+            height: 11rem; }
+          .trending-gifos .trending-gifs .trending-gifs-images .tren .image:hover .dataGif {
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
@@ -577,28 +591,49 @@
                     justify-content: space-between;
             opacity: 0.7;
             background-color: #572EE5;
-            width: 24vw;
-            height: 35vh; }
-            .trending-gifos .trending-gifs .trending-gifs-images .tren .imageTren:hover .dataGifTren .buttonsTren {
-              -ms-flex-item-align: end;
-                  align-self: flex-end;
-              padding: 3%; }
-              .trending-gifos .trending-gifs .trending-gifs-images .tren .imageTren:hover .dataGifTren .buttonsTren img {
-                width: 2.2vw;
+            position: absolute;
+            width: 25vw;
+            height: 11rem;
+            -webkit-transform: translate(0%, -100%);
+                    transform: translate(0%, -100%);
+            margin: none;
+            z-index: 1;
+            margin-top: -2px; }
+            .trending-gifos .trending-gifs .trending-gifs-images .tren .image:hover .dataGif .botones {
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-orient: horizontal;
+              -webkit-box-direction: normal;
+                  -ms-flex-direction: row;
+                      flex-direction: row;
+              -webkit-box-pack: end;
+                  -ms-flex-pack: end;
+                      justify-content: flex-end;
+              position: relative;
+              z-index: 1; }
+              .trending-gifos .trending-gifs .trending-gifs-images .tren .image:hover .dataGif .botones a > img {
+                width: 3vw;
                 height: auto;
+                padding: 7%;
                 -webkit-box-sizing: border-box;
-                        box-sizing: border-box; }
-            .trending-gifos .trending-gifs .trending-gifs-images .tren .imageTren:hover .dataGifTren .userAndTitleTren {
-              -ms-flex-item-align: start;
-                  align-self: flex-start;
-              padding-left: 2vw;
-              padding-bottom: 1rem; }
-              .trending-gifos .trending-gifs .trending-gifs-images .tren .imageTren:hover .dataGifTren .userAndTitleTren p {
+                        box-sizing: border-box;
+                padding: 10%; }
+                .trending-gifos .trending-gifs .trending-gifs-images .tren .image:hover .dataGif .botones a > img:hover {
+                  -webkit-transform: scale(1.2);
+                          transform: scale(1.2);
+                  -webkit-transition: all 0.2s;
+                  transition: all 0.2s; }
+            .trending-gifos .trending-gifs .trending-gifs-images .tren .image:hover .dataGif .info {
+              position: relative;
+              padding-left: 2vw; }
+              .trending-gifos .trending-gifs .trending-gifs-images .tren .image:hover .dataGif .info p {
                 font-family: 'Roboto';
                 font-weight: 500;
                 font-size: 0.9375em;
-                color: #FFFFFF; }
-              .trending-gifos .trending-gifs .trending-gifs-images .tren .imageTren:hover .dataGifTren .userAndTitleTren h4 {
+                color: #FFFFFF;
+                padding-bottom: 0.2rem; }
+              .trending-gifos .trending-gifs .trending-gifs-images .tren .image:hover .dataGif .info h4 {
                 font-family: 'Roboto';
                 font-weight: 700;
                 font-size: 1rem;
