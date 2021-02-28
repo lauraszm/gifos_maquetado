@@ -52,6 +52,7 @@
                     border: 0;
                     margin: 0; /*avoid line between li items*/
                     text-align: center;
+                    cursor: pointer;
 
                     a {
                         @include menu-mobile;
@@ -162,7 +163,12 @@
                         padding: none;
 
                         a {
-                            @include menu-desktop
+                            @include menu-desktop;
+
+                            &:hover {
+                                border-bottom: 2px solid #50E3C2;
+                                transition: all 0.1s linear;
+                            }
                         }
                     }
 

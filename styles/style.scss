@@ -3,17 +3,126 @@
     padding: 0;
 }
 
+.night-mode {
+    * {
+        background-color: #37383C;
+        color: #ffffff;
+    }
 
+    .cabecera > .header {
+        border-top: 5px solid #000000;
 
+    }
+    .cabecera > .header > .menu > .fas {
+        color: #FFFFFF;
+    }
 
+    .cabecera > .header > .menu > ul {
+        background-color: #000000;
+    }
 
-@import 'variables';
-@import 'header';
-@import 'h1';
-@import 'search';
-@import 'trending';
-@import 'footer';
-@import 'favoritos';
-@import 'misGifos';
-@import 'crearGifos';
-@import 'nightmode';
+    .cabecera > .header > .menu > ul > li{
+        background-color: #000000;
+    }
+    .cabecera > .header > .menu > ul > li > a {
+        color: #FFFFFF;
+        background-color: #000000;
+    }
+
+    main > .main-title > h1 {
+        color: #FFFFFF;
+    }
+    
+    .search > .search-bar > .searchElements {
+        background-color: #37383C;
+        border: 1px solid #FFFFFF;
+
+    }
+    .search > .search-bar > .searchElements > input {
+        background-color: #37383C;
+
+        &:placeholder-shown {
+            color: #9CAFC3;
+        }
+    }
+
+    .trending-topics > h3 {
+        color: #FFFFFF;
+    }
+
+    .trending-topics > p {
+        color: #ffffff;
+    }
+
+    .trending-gifos > .trending-gifs {
+        background-color: #222326;
+    }
+
+    .trending-gifos > .trending-gifs > h2 {
+        color: #FFFFFF;
+        background-color: #222326;
+    }
+
+    .trending-gifos > .trending-gifs > p {
+        color: #FFFFFF;
+        background-color: #222326;
+    }
+
+    .trending-gifos > .trending-gifs > p > .line {
+        color: #FFFFFF;
+        background-color: #222326;
+    }
+
+    .trending-gifos > .trending-gifs > .trending-gifs-images {
+        background-color: #222326;
+    }
+
+    .trending-gifos > .trending-gifs > .trending-gifs-images > .slider {
+        background-color: #222326;
+    }
+
+    .footer {
+        border-bottom: 5px solid #000000;
+    }
+    .footer > .compartir > p {
+        color: #FFFFFF;
+    }
+
+    .footer .copyright > p {
+        color: #FFFFFF;
+    }
+}
+
+@media screen and (min-width:768px){
+    .night-mode {
+        .cabecera > .header > .menu {
+            background-color: #37383C;
+        }
+
+        .cabecera > .header > .menu > ul {
+            background-color: #37383C;
+        }
+
+        .cabecera > .header > .menu > ul > li{
+            background-color: #37383C;
+        }
+        
+        .cabecera > .header > .menu > ul > li > a{
+            background-color: #37383C;
+        }
+
+    }
+
+}
+
+body  {
+    @import 'variables';
+    @import 'header';
+    @import 'h1';
+    @import 'search';
+    @import 'trending';
+    @import 'footer';
+    @import 'favoritos';
+    @import 'misGifos';
+    @import 'crearGifos';
+}

@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
     <title>GIFOS</title>
 </head>
 <body>
@@ -23,21 +24,21 @@
             <div class="menu">
             <!--menu hamburguesa-->
                 <input type="checkbox" id="menu">
-                <label for="menu" class="open"> <img src="./images/burger.svg" alt="burger"></label>
-                <label for="menu" class="close"> <img src="./images/close.svg" alt="burger"> </label>
+                <label for="menu" class="open"> <i class="fas fa-bars"></i></label>
+                <label for="menu" class="close"> <i class="fas fa-times"></i> </label>
 
                 <ul>
-                    <li><a id="nightmode">Modo Nocturno</a></li>
+                    <li><a class="underline" id="nightmode">Modo Nocturno</a></li>
                     <div class="menuLine"></div>
-                    <li><a href="./favoritos.html">Mis Favoritos</a></li>
+                    <li><a class="underline" href="./favoritos.html">Mis Favoritos</a></li>
                     <div class="menuLine"></div>
-                    <li><a href="./misGifos.html">Mis GIFOS</a></li>
+                    <li><a class="underline" href="./misGifos.html">Mis GIFOS</a></li>
                     <div class="menuLine"></div>
                 </ul>   
 
                 <div class="create-gifo">
                     <a href="./crearGifos.html">
-                    <img src="./images/button-crear-gifo.svg" alt="crear-gifo">
+                    <img src="./images/button-crear-gifo.svg" alt="crear-gifo" class="crear-gifo-btn">
                     </a>
                 </div>
             </div>
@@ -181,10 +182,9 @@
             <p>Compartir en:</p>
 
             <div class="socials">
-                <img src="./images/icon_facebook.svg" alt="icon-facebook" id="icon-facebook">
-                <img src="./images/icon-twitter.svg" alt="icon-twitter" id="icon-twitter">
-                <img src="./images/icon-twitter-hover.svg" alt="icon-twitter-hover" id="icon-twitter-blue">
-                <img src="./images/icon_instagram.svg" alt="icon-instagram" id="icon-instagram">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
             </div>
         </div>
 
@@ -195,5 +195,6 @@
     <script src="./scripts/funciones.js"></script>
     <script src="./scripts/trending.js"></script>
     <script src="./scripts/search.js"></script>
+    <script src="./scripts/night_mode.js"></script>
 </body>
 </html>
