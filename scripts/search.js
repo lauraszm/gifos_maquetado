@@ -41,8 +41,8 @@ const viewMore = async() => {
 search.addEventListener('click', searchContent);
 
 const createModal = (ev) => {
+    
     const modal = document.querySelector('.modal');
-    // console.log(ev.target)
     modal.style.display = "block";
     modal.innerHTML = 
     `<div class="modalImage">
@@ -55,7 +55,7 @@ const createModal = (ev) => {
     <h4>${ev.target.title}</h4>
     </div>
     <div class="modalBtns">
-        <i class="modalFav"><img src="./images/icon-fav.svg" alt="fav"></i>
+        <i class="modalFav" id='${ev.target.id}'><img src="./images/icon-fav.svg" alt="fav"></i>
         <i class="modalDownload"><img src="./images/icon-download.svg" alt="download"></i>
     </div>
 </div>`
@@ -71,7 +71,7 @@ modal.querySelector('.modalImage > .closeModal').addEventListener('click', funct
 const fetchSearch = (arr) => {
 
     let searchResults = document.querySelector('#containerGifs');
-    console.log(searchInput.value)
+    // console.log(searchInput.value)
 
     // searchResults.innerHTML = '';
     if(arr.data.length === 0){
@@ -91,7 +91,6 @@ const fetchSearch = (arr) => {
         let h2SearchResults = document.createElement('h2');
         h2SearchResults.textContent = searchInput.value;
         searchResults.prepend(h2SearchResults);
-
         const containerGifos = document.querySelector('.containerGifos')
         arr.data.forEach(el => {
             const divGif = document.createElement('div');
@@ -99,7 +98,7 @@ const fetchSearch = (arr) => {
             const imageURL = el.images.fixed_height.url;
             // divGif.style.backgroundImage = `url(${imageURL})`
             divGif.innerHTML = 
-            `<img src="${imageURL}" alt="">
+            `<img src="${imageURL}" alt="${el.title}">
             
             <div class="dataGif">
                 <div class="botones">
@@ -114,20 +113,22 @@ const fetchSearch = (arr) => {
             </div>`
             containerGifos.appendChild(divGif);
 
-            const maximise = divGif.querySelector('.maxGif');
-            maximise.addEventListener('click', createModal);
-            maximise.username = el.username;
-            maximise.title = el.title;
-            maximise.image = imageURL;
+            // const maximise = divGif.querySelector('.dataGif > .botones > .maxGif');
+            // maximise.username = el.username;
+            // maximise.title = el.title;
+            // maximise.image = imageURL;
+            // maximise.id = el.id;
+            // maximise.addEventListener('click', createModal);
+            // console.log(maximise);
 
             const image = divGif.querySelector('img');
-            image.addEventListener("click", createModal);
             image.username = el.username;
             image.title = el.title;
             image.image = imageURL;
+            image.id = el.id;
+            image.addEventListener("click", createModal);
 
-            
-            divGif.addEventListener('click', createModal)
+            divGif.querySelector('.fav').addEventListener('click', addToFavs)
         })
 
         searchInput.innerText = "";

@@ -17,6 +17,8 @@ const getGifosSearch = async (offset, query) => {
     }
 }
 
+const trendingArray = [];
+
 const getGifosTrending = async () => {
     try {
         const resTrending = await fetch('https://api.giphy.com/v1/gifs/trending?api_key=j4As5HO2OpUG2w2gTuuqQnIGuwOu2nnJ&limit=12');
@@ -28,7 +30,9 @@ const getGifosTrending = async () => {
 }
 
 document.addEventListener("DOMContentLoaded", async() => {
-    const gifosTrending = await getGifosTrending()
-    printTrending(gifosTrending)
-
+    const gifosTrending = await getGifosTrending();
+    trendingArray.splice(0,1);
+    trendingArray.push(gifosTrending);
+    printTrending(trendingArray[0]);
+    inicializarFavoritos();
 })

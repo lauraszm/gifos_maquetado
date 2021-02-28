@@ -527,13 +527,13 @@ body .search {
               height: auto;
               padding: 7%;
               -webkit-box-sizing: border-box;
-                      box-sizing: border-box;
-              padding: 10%; }
+                      box-sizing: border-box; }
               body .search #containerGifs .containerGifos .image:hover .dataGif .botones a > img:hover {
                 -webkit-transform: scale(1.2);
                         transform: scale(1.2);
                 -webkit-transition: all 0.2s;
-                transition: all 0.2s; }
+                transition: all 0.2s;
+                opacity: 0.9; }
           body .search #containerGifs .containerGifos .image:hover .dataGif .info {
             position: relative;
             padding-left: 2vw; }
