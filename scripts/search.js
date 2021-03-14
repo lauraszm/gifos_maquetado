@@ -12,7 +12,12 @@ const autocomplete = async (ev) => {
         tags.data.forEach(tag => {
             const newLi = document.createElement('li');
             newLi.textContent = tag.name;
-            containerList.appendChild(newLi)
+            containerList.appendChild(newLi);
+
+            newLi.addEventListener("click", function() {
+                searchContent();
+                containerList.innerHTML = "";
+            })
         })
     }
     // search on enter
@@ -40,22 +45,21 @@ const viewMore = async() => {
 
 search.addEventListener('click', searchContent);
 
-const createModal = (ev) => {
-    
+const createModal = (image, title, username, id) => {
     const modal = document.querySelector('.modal');
     modal.style.display = "block";
     modal.innerHTML = 
     `<div class="modalImage">
-    <img src="${ev.target.image}" alt="${ev.target.title}">
+    <img src="${image}" alt="${title}">
     <i class="closeModal"><img src="./images/close.svg" alt="close"></i>
 </div>
 <div class="modalInfo">
     <div class="modalUserAndTitle">
-    <p>${ev.target.username}</p>
-    <h4>${ev.target.title}</h4>
+    <p>${username}</p>
+    <h4>${title}</h4>
     </div>
     <div class="modalBtns">
-        <i class="modalFav" id='${ev.target.id}'><img src="./images/icon-fav.svg" alt="fav"></i>
+        <i class="modalFav" id='${id}'><img src="./images/icon-fav.svg" alt="fav"></i>
         <i class="modalDownload"><img src="./images/icon-download.svg" alt="download"></i>
     </div>
 </div>`
@@ -71,8 +75,6 @@ modal.querySelector('.modalImage > .closeModal').addEventListener('click', funct
 const fetchSearch = (arr) => {
 
     let searchResults = document.querySelector('#containerGifs');
-    // console.log(searchInput.value)
-
     // searchResults.innerHTML = '';
     if(arr.data.length === 0){
         let noResultsTitle = document.createElement('h2');
@@ -88,7 +90,7 @@ const fetchSearch = (arr) => {
 
     } else {
 
-        let h2SearchResults = document.createElement('h2');
+        let h2SearchResults = document.querySelector('#containerGifs > h2');
         h2SearchResults.textContent = searchInput.value;
         searchResults.prepend(h2SearchResults);
         const containerGifos = document.querySelector('.containerGifos')
@@ -96,9 +98,8 @@ const fetchSearch = (arr) => {
             const divGif = document.createElement('div');
             divGif.classList.add('image');
             const imageURL = el.images.fixed_height.url;
-            // divGif.style.backgroundImage = `url(${imageURL})`
             divGif.innerHTML = 
-            `<img src="${imageURL}" alt="${el.title}">
+            `<img class="imagenGif" src="${imageURL}" alt="${el.title}">
             
             <div class="dataGif">
                 <div class="botones">
@@ -113,20 +114,15 @@ const fetchSearch = (arr) => {
             </div>`
             containerGifos.appendChild(divGif);
 
-            // const maximise = divGif.querySelector('.dataGif > .botones > .maxGif');
-            // maximise.username = el.username;
-            // maximise.title = el.title;
-            // maximise.image = imageURL;
-            // maximise.id = el.id;
-            // maximise.addEventListener('click', createModal);
-            // console.log(maximise);
+            const maximise = divGif.querySelector('.dataGif > .botones > .maxGif');
+            maximise.addEventListener('click', function() {
+                createModal(imageURL, el.title, el.username, el.id)
+            });
 
-            const image = divGif.querySelector('img');
-            image.username = el.username;
-            image.title = el.title;
-            image.image = imageURL;
-            image.id = el.id;
-            image.addEventListener("click", createModal);
+            const image = divGif.querySelector('.imagenGif');
+            image.addEventListener("click", function() {
+                createModal(imageURL, el.title, el.username, el.id)
+            });
 
             divGif.querySelector('.fav').addEventListener('click', addToFavs)
         })

@@ -477,7 +477,8 @@ body .search {
           display: -ms-inline-flexbox;
           display: inline-flex; }
     body .search #containerGifs .containerGifos {
-      grid-template: repeat(3, 1fr)/repeat(4, 1fr); }
+      grid-template: repeat(3, 1fr)/repeat(4, 1fr);
+      grid-gap: 5px; }
       body .search #containerGifs .containerGifos .image {
         width: -webkit-max-content;
         width: -moz-max-content;
@@ -487,8 +488,8 @@ body .search {
         height: max-content;
         position: relative; }
         body .search #containerGifs .containerGifos .image img {
-          width: 18vw;
-          height: 7.5rem; }
+          width: 20vw;
+          height: 9.5rem; }
         body .search #containerGifs .containerGifos .image:hover .dataGif {
           display: -webkit-box;
           display: -ms-flexbox;
@@ -597,11 +598,13 @@ body .trending-gifos .trending-gifs {
       -webkit-box-direction: normal;
           -ms-flex-direction: row;
               flex-direction: row; }
-      body .trending-gifos .trending-gifs .trending-gifs-images .tren .image img {
-        height: 7.5rem;
-        width: 42vw; }
-      body .trending-gifos .trending-gifs .trending-gifs-images .tren .image .dataGif {
-        display: none; }
+      body .trending-gifos .trending-gifs .trending-gifs-images .tren .image {
+        padding: 1vw; }
+        body .trending-gifos .trending-gifs .trending-gifs-images .tren .image img {
+          height: 7.5rem;
+          width: 42vw; }
+        body .trending-gifos .trending-gifs .trending-gifs-images .tren .image .dataGif {
+          display: none; }
 @media screen and (min-width: 768px) {
   body .trending-gifos .trending-gifs {
     -webkit-box-sizing: border-box;

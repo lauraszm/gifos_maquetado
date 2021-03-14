@@ -33,6 +33,6 @@ document.addEventListener("DOMContentLoaded", async() => {
     const gifosTrending = await getGifosTrending();
     trendingArray.splice(0,1);
     trendingArray.push(gifosTrending);
-    printTrending(trendingArray[0]);
+    printTrending(gifosTrending);
     inicializarFavoritos();
 })

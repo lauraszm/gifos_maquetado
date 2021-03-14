@@ -252,14 +252,15 @@
             .containerGifos {
 
                 grid-template: repeat(3, 1fr) / repeat(4,1fr);
+                grid-gap: 5px;
     
                 .image {
                     width: max-content;
                     height: max-content;
                     position: relative;
                     img {
-                        width: 18vw;
-                        height: 7.5rem;
+                        width: 20vw;
+                        height: 9.5rem;
     
                     }
 
