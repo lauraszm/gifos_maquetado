@@ -5,7 +5,7 @@ const printCarrousel = (arr, container) => {
         const divBase = document.createElement('div');
             divBase.classList.add('image');
             divBase.innerHTML = 
-            `<img src="${arr.data[i].images.fixed_height.url}"/>
+            `<img src="${arr.data[i].images.fixed_height.url}" class="imagenGif"/>
             <div class="dataGif">
             <div class="botones">
                 <a class="boton fav" data-id=${arr.data[i].id}><img src="./images/icon-fav.svg" alt="favearTren"></a>
@@ -18,6 +18,11 @@ const printCarrousel = (arr, container) => {
             </div>
         </div>`
             container.appendChild(divBase);
+            const maximise = divBase.querySelector('.dataGif > .botones > .max');
+            maximise.addEventListener('click', function() {
+                createModal(arr.data[i].images.fixed_height.url, arr.data[i].title, arr.data[i].username, arr.data[i].id)
+            });
+
         }
 }
 
@@ -33,7 +38,7 @@ const carrousel = (arr) => {
             const divBase = document.createElement('div');
             divBase.classList.add('image');
             divBase.innerHTML = 
-            `<img src="${el.images.fixed_height.url}"/>
+            `<img src="${el.images.fixed_height.url}" class="imagenGif"/>
             <div class="dataGif">
             <div class="botones">
                 <a class="boton fav" id='${el.id}'"><img src="./images/icon-fav.svg" alt="favearTren"></a>
@@ -46,6 +51,12 @@ const carrousel = (arr) => {
             </div>
         </div>`
             containerImages.appendChild(divBase);
+
+            const image = divBase.querySelector('.imagenGif');
+            image.addEventListener("click", function() {
+                createModal(el.images.fixed_height.url, el.title, el.username, el.id)
+            });
+
         })        
 
 

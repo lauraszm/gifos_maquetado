@@ -103,7 +103,7 @@ const fetchSearch = (arr) => {
             
             <div class="dataGif">
                 <div class="botones">
-                    <a class="boton fav"><img src="./images/icon-fav.svg" alt=""></a>
+                    <a class="boton fav" id="${el.id}"><img src="./images/icon-fav.svg" alt=""></a>
                     <a class="boton maxGif"><img src="./images/icon-max-normal.svg" alt=""></a>
                     <a class="boton download" href="${imageURL}" download><img src="./images/icon-download.svg" alt=""></a>
                 </div>
