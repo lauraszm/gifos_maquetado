@@ -1,3 +1,14 @@
+const inicializarFavoritos = () => {
+
+    if(localStorage.getItem('favoritos')) {
+        printFavoritos();
+    }else {
+        localStorage.setItem('favoritos',JSON.stringify({favoritos: []}));
+    }
+    localStorage.setItem('gifs',JSON.stringify({gifs: []}));
+}
+
+
 
 const getSearchTags = async (word) => {
     try {
@@ -7,6 +18,7 @@ const getSearchTags = async (word) => {
         console.log("ocurrio un error", e)
     }
 }
+const gifosFound =[];
 
 const getGifosSearch = async (offset, query) => {
     try {
@@ -29,10 +41,15 @@ const getGifosTrending = async () => {
     }
 }
 
+const trendingToArr = (arr) => {
+    arr.forEach(el => {
+        trendingArray.push(el)
+    })
+}
+
 document.addEventListener("DOMContentLoaded", async() => {
     const gifosTrending = await getGifosTrending();
-    trendingArray.splice(0,1);
-    trendingArray.push(gifosTrending);
+    trendingToArr(gifosTrending.data);
     printTrending(gifosTrending);
     inicializarFavoritos();
 })

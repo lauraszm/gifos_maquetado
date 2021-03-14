@@ -34,14 +34,14 @@ const carrousel = (arr) => {
 
     } else {
             arr.data.forEach(el => {
-
+            
             const divBase = document.createElement('div');
             divBase.classList.add('image');
             divBase.innerHTML = 
             `<img src="${el.images.fixed_height.url}" class="imagenGif"/>
             <div class="dataGif">
             <div class="botones">
-                <a class="boton fav" id='${el.id}'"><img src="./images/icon-fav.svg" alt="favearTren"></a>
+                <a class="boton fav" ><img data-id='${el.id}' src="./images/icon-fav.svg" alt="favearTren"></a>
                 <a class="boton max"><img src="./images/icon-max-normal.svg" alt="maxTren"></a>
                 <a class="boton download" href="${el.images.original.mp4}" download="gifos" target="_blank"><img src="./images/icon-download.svg" alt="downloadTren"></a>
             </div>
@@ -82,7 +82,7 @@ const carrouselRight = () => {
     const containerImages = document.querySelector('.tren');
     containerImages.innerHTML = "";
     // const gifosTrending = await getGifosTrending();
-    carrousel(trendingArray[0])
+    carrousel(trendingArray)
 };    
 
 
@@ -94,6 +94,6 @@ const printTrending = (arr) => {
     sliderRight.addEventListener('click', carrouselRight)
 }
 
-
+console.log(document)
    
 

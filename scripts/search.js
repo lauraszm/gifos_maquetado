@@ -33,13 +33,13 @@ searchInput.addEventListener('keyup', autocomplete);
 let gifosOffset = 0;
 //getting input for search
 const searchContent = async () => {
-    const gifosSearch = await getGifosSearch(gifosOffset, searchInput.value)
+    const gifosSearch = await getGifosSearch(gifosOffset, searchInput.value);
     fetchSearch(gifosSearch)
 }
 
 const viewMore = async() => {
     gifosOffset +=12;
-    const gifosSearch = await getGifosSearch(gifosOffset, searchInput.value)
+    const gifosSearch = await getGifosSearch(gifosOffset, searchInput.value);
     fetchSearch(gifosSearch)
 }
 
@@ -59,7 +59,7 @@ const createModal = (image, title, username, id) => {
     <h4>${title}</h4>
     </div>
     <div class="modalBtns">
-        <i class="modalFav" id='${id}'><img src="./images/icon-fav.svg" alt="fav"></i>
+        <i class="modalFav"><img data-id='${id}' src="./images/icon-fav.svg" alt="fav"></i>
         <i class="modalDownload"><img src="./images/icon-download.svg" alt="download"></i>
     </div>
 </div>`
@@ -95,6 +95,7 @@ const fetchSearch = (arr) => {
         searchResults.prepend(h2SearchResults);
         const containerGifos = document.querySelector('.containerGifos')
         arr.data.forEach(el => {
+            gifosFound.push(el);
             const divGif = document.createElement('div');
             divGif.classList.add('image');
             const imageURL = el.images.fixed_height.url;
@@ -103,7 +104,7 @@ const fetchSearch = (arr) => {
             
             <div class="dataGif">
                 <div class="botones">
-                    <a class="boton fav" id="${el.id}"><img src="./images/icon-fav.svg" alt=""></a>
+                    <a class="boton fav"><img data-id="${el.id}" src="./images/icon-fav.svg" alt=""></a>
                     <a class="boton maxGif"><img src="./images/icon-max-normal.svg" alt=""></a>
                     <a class="boton download" href="${imageURL}" download><img src="./images/icon-download.svg" alt=""></a>
                 </div>
@@ -133,6 +134,7 @@ const fetchSearch = (arr) => {
         let verMas = document.querySelector('.verMas');
         verMas.style.display = "block";
         verMas.addEventListener("click", viewMore)
+
 
 
     }
