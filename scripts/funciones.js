@@ -1,11 +1,11 @@
 const inicializarFavoritos = () => {
 
     if(localStorage.getItem('favoritos')) {
-        printFavoritos();
+        printFavs();
     }else {
         localStorage.setItem('favoritos',JSON.stringify({favoritos: []}));
     }
-    localStorage.setItem('gifs',JSON.stringify({gifs: []}));
+    // localStorage.setItem('gifs',JSON.stringify({gifs: []}));
 }
 
 
@@ -52,4 +52,5 @@ document.addEventListener("DOMContentLoaded", async() => {
     trendingToArr(gifosTrending.data);
     printTrending(gifosTrending);
     inicializarFavoritos();
+    printFavs()
 })

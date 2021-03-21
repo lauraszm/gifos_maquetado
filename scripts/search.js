@@ -28,7 +28,11 @@ const autocomplete = async (ev) => {
         searchContent();
     }
 }
-searchInput.addEventListener('keyup', autocomplete);
+
+if (searchInput != null) {
+
+    searchInput.addEventListener('keyup', autocomplete);
+}
 
 let gifosOffset = 0;
 //getting input for search
@@ -43,7 +47,10 @@ const viewMore = async() => {
     fetchSearch(gifosSearch)
 }
 
-search.addEventListener('click', searchContent);
+if(search != null) {
+
+    search.addEventListener('click', searchContent);
+}
 
 const createModal = (image, title, username, id) => {
     const modal = document.querySelector('.modal');

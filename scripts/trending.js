@@ -90,10 +90,16 @@ const printTrending = (arr) => {
     carrousel(arr)
     const sliderLeft = document.querySelector('.trending-gifs-images >.left');
     const sliderRight = document.querySelector('.right');
-    sliderLeft.addEventListener('click', carrouselLeft)
-    sliderRight.addEventListener('click', carrouselRight)
+
+    if (sliderLeft != null) {
+        sliderLeft.addEventListener('click', carrouselLeft)
+    }
+
+    if (sliderRight != null) {
+
+        sliderRight.addEventListener('click', carrouselRight)
+    }
 }
 
-console.log(document)
    
 
