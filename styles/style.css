@@ -1014,82 +1014,20 @@ body .misGifos .misGifs {
   body .misGifos .misGifs .myGifs .verMas {
     width: 10vw;
     margin-top: 10vh; } }
-body main {
-  max-height: 70vh; }
-  body main .crearGifos {
-    width: 90vw;
-    margin: auto; }
-    body main .crearGifos .creation {
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: row;
-              flex-direction: row; }
-      body main .crearGifos .creation .camaraYLuz {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-                flex-direction: row;
-        padding-top: 16vh;
-        -webkit-box-align: baseline;
-            -ms-flex-align: baseline;
-                align-items: baseline; }
-        body main .crearGifos .creation .camaraYLuz .camara img {
-          -ms-flex-item-align: center;
-              align-self: center;
-          width: 8.5vw;
-          height: auto; }
-        body main .crearGifos .creation .camaraYLuz .luz img {
-          -ms-flex-item-align: center;
-              align-self: center;
-          width: 6.3vw;
-          height: auto; }
-      body main .crearGifos .creation .filmSection {
-        width: 47.8vw;
-        height: 50vh;
-        border: 1px solid #572EE5;
-        padding: 1vh 5vw; }
-        body main .crearGifos .creation .filmSection h2 {
-          font-family: 'Montserrat';
-          font-weight: 700;
-          font-size: 1.5625rem;
-          color: #572EE5;
-          text-align: center;
-          line-height: 1.875em;
-          padding: 0 8vw; }
-          body main .crearGifos .creation .filmSection h2 .green {
-            color: #5ED7C6; }
-        body main .crearGifos .creation .filmSection p {
-          font-family: 'Roboto';
-          font-weight: 500;
-          font-size: 1rem;
-          color: #000000;
-          text-align: center;
-          line-height: 1.8125rem; }
-      body main .crearGifos .creation .cinta img {
-        width: 12vw;
-        height: auto;
-        padding-left: 2%;
-        margin-top: 40vh; }
-  body main .steps {
+body main .crearGifos {
+  width: 90vw;
+  margin: auto; }
+  body main .crearGifos .creation {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center; }
-    body main .steps .numbers {
+        -ms-flex-direction: row;
+            flex-direction: row; }
+    body main .crearGifos .creation .camaraYLuz {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -1097,87 +1035,147 @@ body main {
       -webkit-box-direction: normal;
           -ms-flex-direction: row;
               flex-direction: row;
-      -ms-flex-item-align: center;
-          align-self: center; }
-      body main .steps .numbers p {
-        font-family: 'Roboto';
-        font-weight: 500;
-        font-size: 1.125rem;
+      padding-top: 16vh;
+      -webkit-box-align: baseline;
+          -ms-flex-align: baseline;
+              align-items: baseline; }
+      body main .crearGifos .creation .camaraYLuz .camara img {
+        -ms-flex-item-align: center;
+            align-self: center;
+        width: 8.5vw;
+        height: auto; }
+      body main .crearGifos .creation .camaraYLuz .luz img {
+        -ms-flex-item-align: center;
+            align-self: center;
+        width: 6.3vw;
+        height: auto; }
+    body main .crearGifos .creation .filmSection {
+      width: 47.8vw;
+      height: 50vh;
+      border: 1px solid #572EE5;
+      padding: 1vh 5vw; }
+      body main .crearGifos .creation .filmSection h2 {
+        font-family: 'Montserrat';
+        font-weight: 700;
+        font-size: 1.5625rem;
         color: #572EE5;
         text-align: center;
-        border: 1px solid #572EE5;
-        border-radius: 50%;
-        margin: 1vw;
-        padding: 0.6rem 1rem; }
-    body main .steps hr {
-      width: 55.3vw;
-      height: 10%;
-      background: #572EE5;
-      -ms-flex-item-align: center;
-          align-self: center;
-      margin-right: 3vw; }
-    body main .steps .comenzar {
-      -ms-flex-item-align: center;
-          align-self: center;
-      font-family: 'Montserrat';
-      font-weight: 700;
-      font-size: 0.8125rem;
+        line-height: 1.875em;
+        padding: 0 8vw; }
+        body main .crearGifos .creation .filmSection h2 .green {
+          color: #5ED7C6; }
+      body main .crearGifos .creation .filmSection p {
+        font-family: 'Roboto';
+        font-weight: 500;
+        font-size: 1rem;
+        color: #000000;
+        text-align: center;
+        line-height: 1.8125rem; }
+    body main .crearGifos .creation .cinta img {
+      width: 12vw;
+      height: auto;
+      padding-left: 2%;
+      margin-top: 40vh; }
+body main .steps {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  body main .steps .numbers {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-item-align: center;
+        align-self: center; }
+    body main .steps .numbers p {
+      font-family: 'Roboto';
+      font-weight: 500;
+      font-size: 1.125rem;
       color: #572EE5;
-      letter-spacing: 0;
       text-align: center;
       border: 1px solid #572EE5;
-      border-radius: 25px;
-      padding: 1rem;
-      text-transform: uppercase;
-      margin-top: 3%;
-      cursor: pointer; }
-    body main .steps .grabar {
-      display: none;
-      -ms-flex-item-align: center;
-          align-self: center;
-      font-family: 'Montserrat';
-      font-weight: 700;
-      font-size: 0.8125rem;
-      color: #572EE5;
-      letter-spacing: 0;
-      text-align: center;
-      border: 1px solid #572EE5;
-      border-radius: 25px;
-      padding: 1rem;
-      text-transform: uppercase;
-      margin-top: 3%;
-      cursor: pointer; }
-    body main .steps .finalizar {
-      display: none;
-      -ms-flex-item-align: center;
-          align-self: center;
-      font-family: 'Montserrat';
-      font-weight: 700;
-      font-size: 0.8125rem;
-      color: #572EE5;
-      letter-spacing: 0;
-      text-align: center;
-      border: 1px solid #572EE5;
-      border-radius: 25px;
-      padding: 1rem;
-      text-transform: uppercase;
-      margin-top: 3%;
-      cursor: pointer; }
-    body main .steps .subir {
-      display: none;
-      -ms-flex-item-align: center;
-          align-self: center;
-      font-family: 'Montserrat';
-      font-weight: 700;
-      font-size: 0.8125rem;
-      color: #572EE5;
-      letter-spacing: 0;
-      text-align: center;
-      border: 1px solid #572EE5;
-      border-radius: 25px;
-      padding: 1rem;
-      text-transform: uppercase;
-      margin-top: 3%;
-      cursor: pointer; }
+      border-radius: 50%;
+      margin: 1vw;
+      padding: 0.6rem 1rem; }
+  body main .steps hr {
+    width: 55.3vw;
+    height: 10%;
+    background: #572EE5;
+    -ms-flex-item-align: center;
+        align-self: center;
+    margin-right: 3vw; }
+  body main .steps .comenzar {
+    -ms-flex-item-align: center;
+        align-self: center;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 0.8125rem;
+    color: #572EE5;
+    letter-spacing: 0;
+    text-align: center;
+    border: 1px solid #572EE5;
+    border-radius: 25px;
+    padding: 1rem;
+    text-transform: uppercase;
+    margin-top: 3%;
+    cursor: pointer; }
+  body main .steps .grabar {
+    display: none;
+    -ms-flex-item-align: center;
+        align-self: center;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 0.8125rem;
+    color: #572EE5;
+    letter-spacing: 0;
+    text-align: center;
+    border: 1px solid #572EE5;
+    border-radius: 25px;
+    padding: 1rem;
+    text-transform: uppercase;
+    margin-top: 3%;
+    cursor: pointer; }
+  body main .steps .finalizar {
+    display: none;
+    -ms-flex-item-align: center;
+        align-self: center;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 0.8125rem;
+    color: #572EE5;
+    letter-spacing: 0;
+    text-align: center;
+    border: 1px solid #572EE5;
+    border-radius: 25px;
+    padding: 1rem;
+    text-transform: uppercase;
+    margin-top: 3%;
+    cursor: pointer; }
+  body main .steps .subir {
+    display: none;
+    -ms-flex-item-align: center;
+        align-self: center;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 0.8125rem;
+    color: #572EE5;
+    letter-spacing: 0;
+    text-align: center;
+    border: 1px solid #572EE5;
+    border-radius: 25px;
+    padding: 1rem;
+    text-transform: uppercase;
+    margin-top: 3%;
+    cursor: pointer; }
 
 /*# sourceMappingURL=style.css.map */

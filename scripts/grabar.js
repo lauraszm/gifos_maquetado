@@ -49,11 +49,13 @@ function getStreamAndRecord() {
             form.append('file', recorder.getBlob(), 'myGif.gif');
             console.log(form.get('file'))
          })
+         
       })
 
 
    })
 
 }
+
 
 comenzar.addEventListener('click', getStreamAndRecord)
