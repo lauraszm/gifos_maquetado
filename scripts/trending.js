@@ -1,26 +1,27 @@
 let slider = 3;
+console.log(trendingArray)
 
 const printCarrousel = (arr, container) => {
     for (i = slider -3; i < slider; i++) {
         const divBase = document.createElement('div');
             divBase.classList.add('image');
             divBase.innerHTML = 
-            `<img src="${arr.data[i].images.fixed_height.url}" class="imagenGif"/>
+            `<img src="${arr[i].images.fixed_height.url}" class="imagenGif"/>
             <div class="dataGif">
             <div class="botones">
-                <a class="boton fav" data-id=${arr.data[i].id}><img src="./images/icon-fav.svg" alt="favearTren"></a>
+                <a class="boton fav" data-id=${arr[i].id}><img src="./images/icon-fav.svg" alt="favearTren"></a>
                 <a class="boton max"><img src="./images/icon-max-normal.svg" alt="maxTren"></a>
-                <a class="boton download" href="${arr.data[i].images.original.mp4}" download="gifos" target="_blank"><img src="./images/icon-download.svg" alt="downloadTren"></a>
+                <a class="boton download" href="${arr[i].images.original.mp4}" download="gifos" target="_blank"><img src="./images/icon-download.svg" alt="downloadTren"></a>
             </div>
             <div class="info">
-                <p>${arr.data[i].username}</p>
-                <h4>${arr.data[i].title}</h4>
+                <p>${arr[i].username}</p>
+                <h4>${arr[i].title}</h4>
             </div>
         </div>`
             container.appendChild(divBase);
             const maximise = divBase.querySelector('.dataGif > .botones > .max');
             maximise.addEventListener('click', function() {
-                createModal(arr.data[i].images.fixed_height.url, arr.data[i].title, arr.data[i].username, arr.data[i].id)
+                createModal(arr[i].images.fixed_height.url, arr[i].title, arr[i].username, arr[i].id)
             });
 
         }
@@ -30,10 +31,10 @@ const carrousel = (arr) => {
     const containerImages = document.querySelector('.tren');
 
     if (window.matchMedia("(min-width: 768px)").matches) {
-        printCarrousel(arr, containerImages);
+        printCarrousel(trendingArray, containerImages);
 
     } else {
-            arr.data.forEach(el => {
+            arr.forEach(el => {
             
             const divBase = document.createElement('div');
             divBase.classList.add('image');
@@ -69,7 +70,7 @@ const carrouselLeft = () => {
     }
     const containerImages = document.querySelector('.tren');
     containerImages.innerHTML = "";
-    carrousel(trendingArray[0])
+    carrousel(trendingArray)
 
 }
 
@@ -81,7 +82,6 @@ const carrouselRight = () => {
     }
     const containerImages = document.querySelector('.tren');
     containerImages.innerHTML = "";
-    // const gifosTrending = await getGifosTrending();
     carrousel(trendingArray)
 };    
 
