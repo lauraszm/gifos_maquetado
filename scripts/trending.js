@@ -11,7 +11,7 @@ const printCarrousel = (arr, container) => {
             <div class="botones">
                 <a class="boton fav" data-id=${arr[i].id}><img src="./images/icon-fav.svg" alt="favearTren"></a>
                 <a class="boton max"><img src="./images/icon-max-normal.svg" alt="maxTren"></a>
-                <a class="boton download" href="${arr[i].images.original.mp4}" download="gifos" target="_blank"><img src="./images/icon-download.svg" alt="downloadTren"></a>
+                <a class="boton download" href=${arr[i].images.original_mp4.mp4} download="gifos" target="_blank"><img src="./images/icon-download.svg" alt="downloadTren"></a>
             </div>
             <div class="info">
                 <p>${arr[i].username}</p>
@@ -21,6 +21,7 @@ const printCarrousel = (arr, container) => {
             container.appendChild(divBase);
             const maximise = divBase.querySelector('.dataGif > .botones > .max');
             maximise.addEventListener('click', function() {
+                console.log(arr[i])
                 createModal(arr[i].images.fixed_height.url, arr[i].title, arr[i].username, arr[i].id)
             });
 
@@ -88,17 +89,21 @@ const carrouselRight = () => {
 
 const printTrending = (arr) => {
     carrousel(arr)
-    const sliderLeft = document.querySelector('.trending-gifs-images >.left');
-    const sliderRight = document.querySelector('.right');
-
+    const sliderLeft = document.querySelectorAll('.trending-gifs-images >.left');
+    const sliderRight = document.querySelectorAll('.trending-gifs-images > .right');
     if (sliderLeft != null) {
-        sliderLeft.addEventListener('click', carrouselLeft)
+        sliderLeft.forEach(slider => {
+            slider.addEventListener('click', carrouselLeft)
+        })
     }
 
     if (sliderRight != null) {
+        sliderRight.forEach(slider => {
 
-        sliderRight.addEventListener('click', carrouselRight)
+            slider.addEventListener('click', carrouselRight)
+        })
     }
+
 }
 
    
