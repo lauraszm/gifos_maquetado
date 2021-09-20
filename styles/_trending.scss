@@ -57,16 +57,6 @@
     }
 }
 
-// @keyframes slide {
-//     from {
-//         margin-left: 0;
-//     }
-//     to {
-//         margin-left: -25vw;
-//     }
-// }
-
-
 
 @media screen and (min-width:768px){
     .trending-gifos {
@@ -86,23 +76,44 @@
             }
     
             .trending-gifs-images {
-                overflow: visible;
-                margin: 0;
+                overflow: hidden;
+                margin: 0px;
                 justify-content: space-between;
                 box-sizing: border-box;
-                padding: 8% 5vw 0 5vw;
+                padding-right: 2vw;
+                padding-left: 3vw;
+                left: 0%;
+
 
                 
                 .slider {
                     display: inline;
                     cursor: pointer;
+                }
+                .left {
+                    position: relative;
+                    z-index: 100;
+                    left: 7%;
+                    margin: 0%;
+                    padding-right: 0px;
+                    background-color: $background-trending;
 
+                }
+                .right {
+                    position: relative;
+                    z-index: 100;
+                    left: 88%;
+                    padding-left: 0.8rem;
+                    padding-right: 12%;
+                    margin-right: 5%;
+                    background-color: $background-trending
                 }
 
                 .tren{
                     box-sizing: border-box;
+                    position: relative;
                     .image {
-                        padding: 0.2rem;
+                        padding: 0.3rem;
                         position: relative;
                         
 

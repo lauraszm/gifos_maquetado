@@ -7,6 +7,15 @@ const inicializarFavoritos = () => {
     // localStorage.setItem('gifs',JSON.stringify({gifs: []}));
 }
 
+const inicializarNightMode = () => {
+
+    if(!localStorage.getItem('nightMode')) {
+        
+        localStorage.setItem('nightMode',JSON.stringify({nightMode: 0}));
+    }
+    // localStorage.setItem('gifs',JSON.stringify({gifs: []}));
+}
+
 
 
 const getSearchTags = async (word) => {
@@ -46,12 +55,29 @@ const trendingToArr = (arr) => {
     })
 }
 
-// document.querySelector
+const fetchTrendingTerms = async () => {
+    try {
+        const resTrendingTerms = await fetch('https://api.giphy.com/v1/trending/searches?api_key=j4As5HO2OpUG2w2gTuuqQnIGuwOu2nnJ');
+        return resTrendingTerms.json();
+    } catch(e) {
+        console.log("hubo un error", e)
+    }
+}
+
+trendingTermsArr = [];
+const trendingTermsToArr = (arr) => {
+    for (let i = 0; i < 5; i++) {
+        trendingTermsArr.push(arr[i])
+    }
+}
 
 document.addEventListener("DOMContentLoaded", async() => {
     const gifosTrending = await getGifosTrending();
     trendingToArr(gifosTrending.data);
     printTrending(gifosTrending);
     inicializarFavoritos();
-    // printFavs()
+    const trendingTermsData  = await fetchTrendingTerms();
+    trendingTermsToArr(trendingTermsData.data);
+    getTrendingTerms(trendingTermsArr);
+    inicializarNightMode()
 })

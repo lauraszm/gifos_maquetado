@@ -34,12 +34,32 @@ if (searchInput != null) {
     searchInput.addEventListener('keyup', autocomplete);
 }
 
-let gifosOffset = 0;
 //getting input for search
 const searchContent = async () => {
     const gifosSearch = await getGifosSearch(gifosOffset, searchInput.value);
     fetchSearch(gifosSearch)
 }
+
+// trending terms
+
+const getTrendingTerms = (arr) => {
+    const trendingTerms = document.querySelector('#trending-text');
+    arr.forEach(el => {
+        const newTerm = document.createElement('span');
+        newTerm.classList.add("trendingTerms")
+        newTerm.textContent = ` ${el} -`;
+        trendingTerms.append(newTerm);
+        newTerm.style.textTransform = "Capitalize";
+        newTerm.style.cursor = "Pointer";
+
+        newTerm.addEventListener("click", async function() {
+            const gifosSearch = await getGifosSearch(gifosOffset, el);
+            fetchSearch(gifosSearch)
+        }) 
+    })
+}
+
+let gifosOffset = 0;
 
 const viewMore = async() => {
     gifosOffset +=12;
@@ -147,3 +167,5 @@ const fetchSearch = (arr) => {
     }
 
 }
+
+
