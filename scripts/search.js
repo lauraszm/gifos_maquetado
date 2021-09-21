@@ -40,36 +40,47 @@ const searchContent = async () => {
     fetchSearch(gifosSearch)
 }
 
-// trending terms
 
-const getTrendingTerms = (arr) => {
-    const trendingTerms = document.querySelector('#trending-text');
-    arr.forEach(el => {
-        const newTerm = document.createElement('span');
-        newTerm.classList.add("trendingTerms")
-        newTerm.textContent = ` ${el} -`;
-        trendingTerms.append(newTerm);
-        newTerm.style.textTransform = "Capitalize";
-        newTerm.style.cursor = "Pointer";
-
-        newTerm.addEventListener("click", async function() {
-            const gifosSearch = await getGifosSearch(gifosOffset, el);
-            fetchSearch(gifosSearch)
-        }) 
-    })
-}
 
 let gifosOffset = 0;
 
 const viewMore = async() => {
     gifosOffset +=12;
     const gifosSearch = await getGifosSearch(gifosOffset, searchInput.value);
-    fetchSearch(gifosSearch)
+    fetchSearch(gifosSearch);
 }
 
 if(search != null) {
 
     search.addEventListener('click', searchContent);
+}
+
+// trending terms
+
+const getTrendingTerms = (arr) => {
+    const trendingTerms = document.querySelector('#trending-text');
+    
+    for (let i=0; i<arr.length; i++) {
+        const newTerm = document.createElement('span');
+        newTerm.classList.add("trendingTerms")
+
+        if(i < arr.length-1) {
+            newTerm.textContent = ` ${arr[i]},`;
+        } else {
+            newTerm.textContent = ` ${arr[i]}`;
+        }
+        trendingTerms.append(newTerm);
+        newTerm.style.textTransform = "Capitalize";
+        newTerm.style.cursor = "Pointer";
+        
+        newTerm.addEventListener("click", async function() {
+            const gifosSearch = await getGifosSearch(gifosOffset, arr[i]);
+            const containerGifos = document.querySelector('.containerGifos');
+            searchInput.value = arr[i];
+            containerGifos.innerHTML = "";
+            fetchSearch(gifosSearch)
+        }) 
+    }
 }
 
 const createModal = (image, title, username, id) => {
